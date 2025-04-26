@@ -16,6 +16,7 @@ export const SKILL_ICON_MAP = {
   html: 'devicon:html5',
   css: 'devicon:css3',
   sass: 'devicon:sass',
+  shopify: 'devicon:shopify',
   tailwind: 'devicon:tailwindcss',
   react: "devicon:react",
   node: "devicon:nodejs",

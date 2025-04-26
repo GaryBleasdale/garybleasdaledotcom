@@ -2,6 +2,7 @@ import { SKILL_ICON_MAP } from '../src/data/skill-icons.js';
 import { PROFILE_ICON_MAP } from '../src/data/profile-icons.js';
 
 export function iconFilter() {
+  
   const allIcons = {
     ...SKILL_ICON_MAP,
     ...PROFILE_ICON_MAP,

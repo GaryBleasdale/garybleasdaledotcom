@@ -1,5 +1,6 @@
 export const PROFILE_ICON_MAP = {
   // Social Links
+  whatsapp: 'simple-icons:whatsapp',
   github: 'simple-icons:github',
   linkedin: 'simple-icons:linkedin',
   twitter: 'simple-icons:twitter',

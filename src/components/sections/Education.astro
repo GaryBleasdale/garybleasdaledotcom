@@ -9,7 +9,7 @@ const education = educationData as Education[]
 <Section title="Education">
   <ul>
     {
-      education.map(({ institution, startDate, endDate, area, studyType }) => {
+      education.map(({ institution, startDate, endDate, area, studyType, score }) => {
         const startYear = new Date(startDate).getFullYear()
         const endYear =
           endDate != null ? new Date(endDate).getFullYear() : "Present"
@@ -27,7 +27,7 @@ const education = educationData as Education[]
               </header>
 
               <footer>
-                <p>{studyType && `${studyType}, `}{area}</p>
+                <p>{studyType && `${area} `}{studyType}, {score}</p>
               </footer>
             </article>
           </li>
