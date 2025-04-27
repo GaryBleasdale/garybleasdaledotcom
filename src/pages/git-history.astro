@@ -1,44 +1,5 @@
+---
+import CommitHeatmap from "@/components/react/CommitHeatmap"
+---
+<CommitHeatmap client:only/>
 
-    <div style="width: 90%; max-width: 1100px; margin: auto">
-      <div>
-        <h1>Aggregate Git commit History</h1>
-        <p>
-          <span style="font-weight: bold; font-size: 16px">Rationale: </span
-          ><span
-            >The majority of my work commits are not stored in Github, due to my
-            employer's choice of git hosting. Therefore, in order to show an
-            accurate record of my commits, I needed to aggregate the commits I
-            made across all git hosting platforms.
-          </span>
-        </p>
-        <p>
-          Please note that this chart uses a <strong>Log scale</strong>, and not
-          a Linear scale.
-        </p>
-        <h5>Sources: Github & Microsoft Azure</h5>
-        <h5
-          style="font-style: italic; color: orangered; display: hidden"
-          id="chart-updated-date"
-        ></h5>
-      </div>
-      <div width:100%>
-        <img
-          src="nested_repos_calendar.png"
-          style="width: 100%"
-          crossorigin=""
-        />
-      </div>
-    </div>
-
-  <script>
-    fetch(
-      "https://garybleasdale.com/.netlify/functions/retrieve-last-modified?name=gary",
-      {
-        method: "GET",
-      }
-    )
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => console.error("Error fetching the file:", error));
-  </script>
