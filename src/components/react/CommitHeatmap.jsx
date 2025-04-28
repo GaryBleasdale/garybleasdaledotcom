@@ -1,4 +1,4 @@
-
+import "./calHeatmap.css";
 import YearHeatmap from "./YearHeatmap";
 
 export default function CommitHeatmap({commitData}) {
