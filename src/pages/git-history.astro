@@ -1,10 +1,21 @@
 ---
 import CommitHeatmap from "@/components/react/CommitHeatmap"
 import Layout from "@/layouts/Layout.astro"
-import { basics } from "@cv"
-const { name, label } = basics
+import { db, year2025, year2024 } from "astro:db";
+
+const tableY2025=await db.select().from(year2025)
+const tableY2024=await db.select().from(year2024)
+const allTables = [tableY2025,tableY2024]
+const parsedCommitData = allTables.map((year)=>{
+    return year.map((el)=>{
+      return {
+        date:el.date,
+        value:el.value
+      }
+    })
+  })
 ---
 <Layout title="Git History: Gary Bleasdale">
-<CommitHeatmap client:load/>
+    <CommitHeatmap client:load commitData={parsedCommitData}/>
 </Layout>
 

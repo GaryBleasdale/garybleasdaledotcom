@@ -4,9 +4,11 @@ import { portfolioIcons } from './utils/portfolio-icons.js';
 
 import react from '@astrojs/react';
 
+import db from '@astrojs/db';
+
 // https://astro.build/config
 export default defineConfig({
     integrations: [icon({
         include: portfolioIcons,
-    }), react()]
+    }), react(), db()]
 });
