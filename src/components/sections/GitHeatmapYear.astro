@@ -1,0 +1,9 @@
+---
+export const prerender = false
+const { year } = Astro.props;
+import YearHeatmap from "../react/YearHeatmap"
+import {db, year2025 } from "astro:db"
+const yearData = await db.select().from(year2025)
+
+---
+<YearHeatmap yearData = {yearData} client:only/>

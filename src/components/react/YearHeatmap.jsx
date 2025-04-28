@@ -6,7 +6,7 @@ import CalendarLabel from "cal-heatmap/plugins/CalendarLabel";
 
 export default function YearHeatmap(yearData){
     let yearDataArr =  yearData.yearData
-    useEffect(() => {
+       console.log('ahh im rendering')
         const cal = new CalHeatmap();
         cal.paint(
           {
@@ -76,7 +76,6 @@ export default function YearHeatmap(yearData){
             ],
           ]
         );
-    });
   
     return (
         <div>
