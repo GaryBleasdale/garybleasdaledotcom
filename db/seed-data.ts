@@ -1,3 +1,9 @@
+export const yearsData = [
+    { id: 1, year: "2025" },
+    { id: 2, year: "2024" },
+    { id: 3, year: "2023" },
+];
+
 export const year2025Data = [
     { id: 1, date: "2025-01-03", value: 2, author: "gary@garybleasdale.dev" },
     { id: 2, date: "2025-01-10", value: 4, author: "gary@garybleasdale.dev" },
