@@ -1,5 +1,10 @@
 ---
 import CommitHeatmap from "@/components/react/CommitHeatmap"
+import Layout from "@/layouts/Layout.astro"
+import { basics } from "@cv"
+const { name, label } = basics
 ---
-<CommitHeatmap client:only/>
+<Layout title="Git History: Gary Bleasdale">
+<CommitHeatmap client:load/>
+</Layout>
 
