@@ -1,5 +1,4 @@
-// src/components/react/CommitHeatmap.jsx
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import CalHeatmap from 'cal-heatmap';
 import Tooltip from 'cal-heatmap/plugins/Tooltip';
 import LegendLite from 'cal-heatmap/plugins/LegendLite';
@@ -16,13 +15,13 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
   const [error, setError] = useState(null);
 
 
-  // --- Data Fetching Logic ---
+
   const fetchDataForYear = useCallback(async (year) => {
       if (isLoading) return;
 
       setIsLoading(true);
       setError(null);
-      // Don't clear commitData immediately
+
 
       try {
           console.log(`Fetching data for year: ${year}`);
@@ -32,31 +31,30 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
           }
           const data = await response.json();
 
-          setCommitData(data); // Update state
+          setCommitData(data);
       } catch (e) {
           setError(e.message);
-          setCommitData({}); // Clear data on error
+          setCommitData({}); 
           console.error(`Failed to fetch commit data for year ${year}:`, e);
       } finally {
           setIsLoading(false);
       }
   }, [isLoading]);
 
-  // Effect to trigger data fetch
+
   useEffect(() => {
     if (selectedYear !== null) {
       fetchDataForYear(selectedYear);
     }
   }, [selectedYear, fetchDataForYear]);
 
-  // --- Cal-Heatmap Initialization and Update Logic ---
+
   useEffect(() => {
     if (!heatmapRef.current) {
         console.warn("Heatmap container ref is not available.");
         return;
     }
 
-    // Define common CalHeatmap configuration
     const defaultCalConfig = {
         itemSelector: heatmapRef.current,
         domain: {
@@ -84,7 +82,7 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
             [
                 Tooltip,
                 {
-                    text: function (date, value, dayjsDate) {
+                    text: function (value, dayjsDate) {
                       return (
                         (value ? value : "No") +
                         " contributions on " +
@@ -116,14 +114,11 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
         ]
     };
 
-    // --- Initialize or Update CalHeatmap ---
     console.log('commit data', commitData)
     if (!cal.current) {
-      // First render: Initialize CalHeatmap using paint()
       console.log('Initializing CalHeatmap instance with paint()...');
       cal.current = new CalHeatmap();
 
-      // cal.paint() takes config object and plugins array
       cal.current.paint(
           {
               ...defaultCalConfig,
@@ -140,51 +135,43 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
       console.log('CalHeatmap initialized with paint().');
       setIsLoading(false);
     } else if (!isLoading) {
-        // Subsequent renders: Update CalHeatmap using update() or jumpTo()
 
         console.log(`Updating heatmap view or data for year ${selectedYear}...`);
 
-        // Check if the year displayed by cal-heatmap needs to change
-        // Use getView().options.start to get the current start date object
         const currentCalStartDate = cal.current.getView().options.start;
         const currentCalYear = currentCalStartDate ? currentCalStartDate.getFullYear() : null;
 
         if (currentCalYear !== selectedYear) {
              console.log(`Jumping CalHeatmap view from ${currentCalYear} to ${selectedYear}`);
-             // Jump the calendar view to the start of the new selected year
-             // jumpTo takes a Date object
+
              cal.current.jumpTo(new Date(selectedYear, 0, 1));
         }
 
-        // Update the data displayed on the heatmap
-        // cal-heatmap's update method takes the data object directly
-        // Ensure commitData is in the format { timestamp: count }
-        cal.current.update(commitData, false); // false means don't re-init plugins etc.
+        cal.current.update(commitData, false); 
         console.log('CalHeatmap data updated.');
     }
 
-    // --- Cleanup Function ---
+
     return () => {
-      // Destroy the CalHeatmap instance when the component unmounts
+
       if (cal.current) {
         console.log('Destroying CalHeatmap instance...');
         cal.current.destroy();
-        cal.current = null; // Clear the ref
+        cal.current = null; 
       }
     };
 
-  }, [commitData, selectedYear, isLoading]); // Dependencies
+  }, [commitData, selectedYear, isLoading]);
 
-  // --- Render Logic ---
+
   const handleYearSelect = (year) => {
      if (year !== selectedYear) {
-         setSelectedYear(year); // This state change triggers the data fetch effect
+         setSelectedYear(year); 
      }
   };
 
   return (
     <div>
-       {/* Year Selection Buttons */}
        <div style={{ marginBottom: '15px', textAlign: 'right' }}>
            {availableYears.map(year => (
                <button
@@ -210,7 +197,6 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
            ))}
        </div>
 
-       {/* Loading, Error, or No Data Messages */}
        {isLoading && <p style={{color: '#768390'}}>Loading heatmap data for {selectedYear}...</p>}
        {!isLoading && error && (
          <p style={{ color: 'red' }}>Error loading data: {error}</p>
@@ -219,11 +205,9 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
            <p style={{color: '#768390'}}>No commit data available for {selectedYear}.</p>
        )}
 
-       {/* Heatmap Container */}
        <div ref={heatmapRef} style={{ minHeight: '100px' }}>
        </div>
 
-       {/* The legend div is outside this component */}
     </div>
   );
 }

@@ -1,20 +1,19 @@
 ---
-import Section from "@/components/Section.astro"
-import { basics as basicsData } from "@cv"
-import { Icon } from "astro-icon/components"
-import { getIconName } from "@/data/profile-icons"
-import type { Basics } from "@/data/cv"
+import Section from "@/components/Section.astro";
+import { basics as basicsData } from "@cv";
+import { Icon } from "astro-icon/components";
+import { getIconName } from "@/data/profile-icons";
+import type { Basics } from "@/data/cv";
 
-const basics = basicsData as Basics
+const basics = basicsData as Basics;
 const { name, label, image, profiles = [], phone, email } = basics;
 const city = basics.location?.city ?? "";
-const country = basics.location?.country ?? "";
 const countryCode = basics.location?.countryCode ?? "";
 const region = basics.location?.region ?? "";
 
-const linkedinUrl = profiles.find(({ network }) => network === "LinkedIn")?.url
+const linkedinUrl = profiles.find(({ network }) => network === "LinkedIn")?.url;
 
-const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ")
+const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
 ---
 
 <Section>
@@ -22,12 +21,14 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ")
     <div class="info">
       <h1>{name}</h1>
       <h2>{label}</h2>
-      {city && (
-        <span>
-          <Icon name="globe" />
-          {region ? `${city}, ${region}` : `${city}, ${countryCode}`}
-        </span>
-      )}
+      {
+        city && (
+          <span>
+            <Icon name="globe" />
+            {region ? `${city}, ${region}` : `${city}, ${countryCode}`}
+          </span>
+        )
+      }
       <footer class="print">
         {printInfo}
       </footer>
@@ -46,18 +47,22 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ")
         }
         {
           profiles.map(({ network, url }) => {
-            const iconName = getIconName(network)
+            const iconName = getIconName(network);
 
             return (
               <a
                 href={url}
-                title={network === "WhatsApp" ? `Talk to ${name} on ${network}` : `Visit ${name}'s on ${network}`}
+                title={
+                  network === "WhatsApp"
+                    ? `Talk to ${name} on ${network}`
+                    : `Visit ${name}'s on ${network}`
+                }
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 {iconName && <Icon name={iconName} class="icon hero-icon" />}
               </a>
-            )
+            );
           })
         }
       </footer>

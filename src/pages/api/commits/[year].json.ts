@@ -1,9 +1,7 @@
 import type { APIRoute } from "astro";
 import { and, commits, db, gte, lt, sql } from "astro:db";
 
-type HeatmapData = { [timestamp: number]: number };
-
-export const GET: APIRoute = async ({ params, request }) => {
+export const GET: APIRoute = async ({ params }) => {
     const yearParam = params.year;
 
     if (!yearParam) {
@@ -38,7 +36,7 @@ export const GET: APIRoute = async ({ params, request }) => {
         const dayTimestampExpression = sql<
             number
         >`CAST(strftime('%s', DATE(${commits.commit_timestamp}, 'unixepoch')) AS INTEGER)`;
-        function convertTimestampToDate(timestamp) {
+        function convertTimestampToDate(timestamp: number) {
             const date = new Date(timestamp * 1000);
             return date.toISOString();
         }

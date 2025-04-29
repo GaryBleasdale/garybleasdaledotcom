@@ -2,6 +2,8 @@
 import CommitHeatmap from "@/components/react/CommitHeatmap";
 import Layout from "@/layouts/Layout.astro";
 import { db, commits, sql } from "astro:db";
+import { basics } from "@cv";
+const { name } = basics;
 import "../styles/calHeatmap.css";
 
 const yearResult = await db
@@ -17,7 +19,7 @@ const initialYear =
   availableYears.length > 0 ? availableYears[0] : new Date().getFullYear();
 ---
 
-<Layout title="Git History: Gary Bleasdale">
+<Layout title=`${name}: Git`>
   <div
     style={{
       background: "#22272d",
