@@ -27,14 +27,18 @@ const initialYear =
       borderRadius: "3px",
       padding: "1rem",
       overflow: "hidden",
+      height: "100vh",
+      width: "100vw",
     }}
   >
     <div>Heatmaps</div>
-    <CommitHeatmap
-      client:load
-      availableYears={availableYears}
-      initialYear={initialYear}
-    />
+    <div>
+      <CommitHeatmap
+        client:load
+        availableYears={availableYears}
+        initialYear={initialYear}
+      />
+    </div>
     <div style={{ float: "right", fontSize: 12 }}>
       <span style={{ color: "#768390" }}>Less</span>
       <div

@@ -161,66 +161,78 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
   return (
     <div>
       <div style={{ marginBottom: "15px", textAlign: "right" }}>
-        {availableYears.map((year) => (
-          <button
-            key={year}
-            onClick={() => handleYearSelect(year)}
-            disabled={isLoading}
-            style={{
-              margin: "0 2px",
-              padding: "4px 8px",
-              cursor: isLoading ? "not-allowed" : "pointer",
-              border: "1px solid #444",
-              background: year === selectedYear ? "#0969da" : "#2d333b",
-              color: year === selectedYear ? "#ffffff" : "#adbac7",
-              borderRadius: "4px",
-              fontSize: "12px",
-              opacity: isLoading ? 0.6 : 1,
-              pointerEvents: isLoading ? "none" : "auto",
+        <div style={{display:'flex', flexDirection:"column"}}>
+          <div ref={heatmapRef} style={{ minHeight: "160px", minWidth:"95%" }}>
+
+
+
+          {isLoading && (
+          <div style={{width:'100%', height:'100%', display:'flex', alignItems:"center", justifyContent:"center"}}>
+            <p style={{ color: "#768390" }}>
+              {!error &&
+              (
+              <span>Loading heatmap data for {selectedYear}...</span>
+              )
+              }
+              {
+                error&&(
+                  <span>Error loading data for {selectedYear}...</span>
+                )
+              }
+            </p>
+          </div>
+        )}
+          </div>
+          <div style={{ display: "flex"}}>
+            {availableYears.map((year) => (
+              <button
+                key={year}
+                onClick={() => handleYearSelect(year)}
+                disabled={isLoading}
+                style={{
+                  margin: "0 2px",
+                  padding: "4px 8px",
+                  cursor: isLoading ? "not-allowed" : "pointer",
+                  border: "1px solid #444",
+                  background: year === selectedYear ? "#0969da" : "#2d333b",
+                  color: year === selectedYear ? "#ffffff" : "#adbac7",
+                  borderRadius: "4px",
+                  fontSize: "12px",
+                  opacity: isLoading ? 0.6 : 1,
+                  pointerEvents: isLoading ? "none" : "auto",
+                }}
+                aria-pressed={year === selectedYear}
+              >
+                {year}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div style={{gap:'10px', display:'flex', justifyContent: 'flex-end'}}>
+          <a
+            className="button button--sm button--secondary margin-top--sm"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              cal.current.previous(2);
             }}
-            aria-pressed={year === selectedYear}
           >
-            {year}
-          </button>
-        ))}
-      </div>
-
-      {isLoading && (
-        <p style={{ color: "#768390" }}>
-          Loading heatmap data for {selectedYear}...
-        </p>
-      )}
-      {!isLoading && error && (
-        <p style={{ color: "red" }}>Error loading data: {error}</p>
-      )}
-      {!isLoading && !error && Object.keys(commitData).length === 0 && (
-        <p style={{ color: "#768390" }}>
-          No commit data available for {selectedYear}.
-        </p>
-      )}
-
-      <div ref={heatmapRef} style={{ minHeight: "100px" }}>
-        <a
-          className="button button--sm button--secondary margin-top--sm"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            cal.current.previous(2);
-          }}
-        >
-          ← Previous
-        </a>
-        <a
-          className="button button--sm button--secondary margin-top--sm margin-left--xs"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            cal.current.next(2);
-            console.log(cal.current.navigator.maxDomainReached);
-          }}
-        >
-          Next →
-        </a>
+            ← Previous
+          </a>
+          <a
+            className="button button--sm button--secondary margin-top--sm margin-left--xs"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              cal.current.next(2);
+              console.log(cal.current.navigator.maxDomainReached);
+            }}
+          >
+            Next →
+          </a>
+        </div>
+       
       </div>
     </div>
   );

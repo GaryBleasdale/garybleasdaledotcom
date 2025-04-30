@@ -96,3 +96,15 @@
   background: #636e7b;
   color: #cdd9e5;
 }
+
+.button {
+  background: rgb(45, 51, 59);
+  color: rgb(173, 186, 199);
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 14px;
+}
+
+.button:active {
+  background: rgb(41, 46, 51);
+}
