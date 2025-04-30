@@ -12,7 +12,6 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
   const [commitData, setCommitData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [domainIndex, setDomainIndex] = useState(0);
 
   const fetchDataForYear = useCallback(
     async (year) => {
