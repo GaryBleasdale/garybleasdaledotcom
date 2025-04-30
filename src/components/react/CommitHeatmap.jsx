@@ -1,46 +1,44 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
-import CalHeatmap from 'cal-heatmap';
-import Tooltip from 'cal-heatmap/plugins/Tooltip';
-import LegendLite from 'cal-heatmap/plugins/LegendLite';
-import CalendarLabel from 'cal-heatmap/plugins/CalendarLabel';
+import { useEffect, useRef, useState, useCallback } from "react";
+import CalHeatmap from "cal-heatmap";
+import Tooltip from "cal-heatmap/plugins/Tooltip";
+import LegendLite from "cal-heatmap/plugins/LegendLite";
+import CalendarLabel from "cal-heatmap/plugins/CalendarLabel";
 
 export default function CommitHeatmap({ availableYears, initialYear }) {
   const heatmapRef = useRef(null);
   const cal = useRef(null);
 
-
   const [selectedYear, setSelectedYear] = useState(initialYear);
   const [commitData, setCommitData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [domainIndex, setDomainIndex] = useState(0);
 
-
-
-  const fetchDataForYear = useCallback(async (year) => {
+  const fetchDataForYear = useCallback(
+    async (year) => {
       if (isLoading) return;
 
       setIsLoading(true);
       setError(null);
 
-
       try {
-          console.log(`Fetching data for year: ${year}`);
-          const response = await fetch(`/api/commits/${year}.json`);
-          if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          const data = await response.json();
+        const response = await fetch(`/api/commits/${year}.json`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
 
-          setCommitData(data);
+        setCommitData(data);
       } catch (e) {
-          setError(e.message);
-          setCommitData({}); 
-          console.error(`Failed to fetch commit data for year ${year}:`, e);
+        setError(e.message);
+        setCommitData({});
+        console.error(`Failed to fetch commit data for year ${year}:`, e);
       } finally {
-          setIsLoading(false);
+        setIsLoading(false);
       }
-  }, [isLoading]);
-
+    },
+    [isLoading]
+  );
 
   useEffect(() => {
     if (selectedYear !== null) {
@@ -48,166 +46,182 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
     }
   }, [selectedYear, fetchDataForYear]);
 
-
   useEffect(() => {
     if (!heatmapRef.current) {
-        console.warn("Heatmap container ref is not available.");
-        return;
+      console.warn("Heatmap container ref is not available.");
+      return;
     }
 
     const defaultCalConfig = {
-        itemSelector: heatmapRef.current,
-        domain: {
-          type: "month",
-          gutter: 4,
-          label: { text: "MMM", textAlign: "start", position: "top" },
+      itemSelector: heatmapRef.current,
+      domain: {
+        type: "month",
+        gutter: 4,
+        label: { text: "MMM", textAlign: "start", position: "top" },
+      },
+      subDomain: {
+        type: "ghDay",
+        radius: 2,
+        width: 11,
+        height: 11,
+        gutter: 4,
+      },
+      date: {
+        start: new Date(`${selectedYear}-01-01`),
+      },
+      range: 12,
+      scale: {
+        color: {
+          type: "threshold",
+          range: ["#14432a", "#166b34", "#37a446", "#4dd05a"],
+          domain: [1, 2, 5],
         },
-        subDomain: {
-          type: "ghDay",
-          radius: 2,
-          width: 11,
-          height: 11,
-          gutter: 4,
-        },
-        date: { start: `${selectedYear}-01-01` },
-        range: 12,
-        scale: {
-          color: {
-            type: 'threshold',
-            range: ['#14432a', '#166b34', '#37a446', '#4dd05a'],
-            domain: [ 1, 2, 5],
-          }
-        },
-        plugins: [
-            [
-                Tooltip,
-                {
-                    text: function (value, dayjsDate) {
-                      return (
-                        (value ? value : "No") +
-                        " contributions on " +
-                        dayjsDate.format("dddd, MMMM D, YYYY")
-                      );
-                    },
-                },
-            ],
-            [
-                LegendLite,
-                {
-                    includeBlank: true,
-                    itemSelector: '#ex-ghDay-legend',
-                    radius: 2,
-                    width: 11,
-                    height: 11,
-                    gutter: 4,
-                },
-            ],
-             [
-                CalendarLabel,
-                {
-                  width: 30,
-                  textAlign: "start",
-                  text: () => dayjs.weekdaysShort().map((d, i) => (i % 2 == 0 ? "" : d)),
-                  padding: [25, 0, 0, 0],
-                },
-             ],
-        ]
+      },
+      plugins: [
+        [
+          Tooltip,
+          {
+            text: function (_timestamp, value, dayjsDate) {
+              return (
+                (value ? value : "No") +
+                " contributions on " +
+                dayjsDate.format("dddd, MMMM D, YYYY")
+              );
+            },
+          },
+        ],
+        [
+          LegendLite,
+          {
+            includeBlank: true,
+            itemSelector: "#ex-ghDay-legend",
+            radius: 2,
+            width: 11,
+            height: 11,
+            gutter: 4,
+          },
+        ],
+        [
+          CalendarLabel,
+          {
+            width: 30,
+            textAlign: "start",
+            text: () =>
+              dayjs.weekdaysShort().map((d, i) => (i % 2 == 0 ? "" : d)),
+            padding: [25, 0, 0, 0],
+          },
+        ],
+      ],
     };
 
-    console.log('commit data', commitData)
     if (!cal.current) {
-      console.log('Initializing CalHeatmap instance with paint()...');
       cal.current = new CalHeatmap();
 
       cal.current.paint(
-          {
-              ...defaultCalConfig,
-              data: {
-                  source: commitData,
-                  x: "date",
-                  y: "value",
-                  groupy:"sum"
-              },
+        {
+          ...defaultCalConfig,
+          data: {
+            source: commitData,
+            x: "date",
+            y: "value",
+            groupy: "sum",
           },
-          defaultCalConfig.plugins 
+        },
+        defaultCalConfig.plugins
       );
 
-      console.log('CalHeatmap initialized with paint().');
       setIsLoading(false);
     } else if (!isLoading) {
+      const currentCalStartDate = cal.current.getView().options.start;
+      const currentCalYear = currentCalStartDate
+        ? currentCalStartDate.getFullYear()
+        : null;
 
-        console.log(`Updating heatmap view or data for year ${selectedYear}...`);
+      if (currentCalYear !== selectedYear) {
+        cal.current.jumpTo(new Date(selectedYear, 0, 1));
+      }
 
-        const currentCalStartDate = cal.current.getView().options.start;
-        const currentCalYear = currentCalStartDate ? currentCalStartDate.getFullYear() : null;
-
-        if (currentCalYear !== selectedYear) {
-             console.log(`Jumping CalHeatmap view from ${currentCalYear} to ${selectedYear}`);
-
-             cal.current.jumpTo(new Date(selectedYear, 0, 1));
-        }
-
-        cal.current.update(commitData, false); 
-        console.log('CalHeatmap data updated.');
+      cal.current.update(commitData, false);
     }
 
-
     return () => {
-
       if (cal.current) {
-        console.log('Destroying CalHeatmap instance...');
         cal.current.destroy();
-        cal.current = null; 
+        cal.current = null;
       }
     };
-
   }, [commitData, selectedYear, isLoading]);
 
-
   const handleYearSelect = (year) => {
-     if (year !== selectedYear) {
-         setSelectedYear(year); 
-     }
+    if (year !== selectedYear) {
+      setSelectedYear(year);
+    }
   };
 
   return (
     <div>
-       <div style={{ marginBottom: '15px', textAlign: 'right' }}>
-           {availableYears.map(year => (
-               <button
-                   key={year}
-                   onClick={() => handleYearSelect(year)}
-                   disabled={isLoading}
-                   style={{
-                       margin: '0 2px',
-                       padding: '4px 8px',
-                       cursor: isLoading ? 'not-allowed' : 'pointer',
-                       border: '1px solid #444',
-                       background: year === selectedYear ? '#0969da' : '#2d333b',
-                       color: year === selectedYear ? '#ffffff' : '#adbac7',
-                       borderRadius: '4px',
-                       fontSize: '12px',
-                       opacity: isLoading ? 0.6 : 1,
-                       pointerEvents: isLoading ? 'none' : 'auto',
-                   }}
-                   aria-pressed={year === selectedYear}
-               >
-                   {year}
-               </button>
-           ))}
-       </div>
+      <div style={{ marginBottom: "15px", textAlign: "right" }}>
+        {availableYears.map((year) => (
+          <button
+            key={year}
+            onClick={() => handleYearSelect(year)}
+            disabled={isLoading}
+            style={{
+              margin: "0 2px",
+              padding: "4px 8px",
+              cursor: isLoading ? "not-allowed" : "pointer",
+              border: "1px solid #444",
+              background: year === selectedYear ? "#0969da" : "#2d333b",
+              color: year === selectedYear ? "#ffffff" : "#adbac7",
+              borderRadius: "4px",
+              fontSize: "12px",
+              opacity: isLoading ? 0.6 : 1,
+              pointerEvents: isLoading ? "none" : "auto",
+            }}
+            aria-pressed={year === selectedYear}
+          >
+            {year}
+          </button>
+        ))}
+      </div>
 
-       {isLoading && <p style={{color: '#768390'}}>Loading heatmap data for {selectedYear}...</p>}
-       {!isLoading && error && (
-         <p style={{ color: 'red' }}>Error loading data: {error}</p>
-       )}
-       {!isLoading && !error && Object.keys(commitData).length === 0 && (
-           <p style={{color: '#768390'}}>No commit data available for {selectedYear}.</p>
-       )}
+      {isLoading && (
+        <p style={{ color: "#768390" }}>
+          Loading heatmap data for {selectedYear}...
+        </p>
+      )}
+      {!isLoading && error && (
+        <p style={{ color: "red" }}>Error loading data: {error}</p>
+      )}
+      {!isLoading && !error && Object.keys(commitData).length === 0 && (
+        <p style={{ color: "#768390" }}>
+          No commit data available for {selectedYear}.
+        </p>
+      )}
 
-       <div ref={heatmapRef} style={{ minHeight: '100px' }}>
-       </div>
-
+      <div ref={heatmapRef} style={{ minHeight: "100px" }}>
+        <a
+          className="button button--sm button--secondary margin-top--sm"
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            cal.current.previous(2);
+          }}
+        >
+          ← Previous
+        </a>
+        <a
+          className="button button--sm button--secondary margin-top--sm margin-left--xs"
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            cal.current.next(2);
+            console.log(cal.current.navigator.maxDomainReached);
+          }}
+        >
+          Next →
+        </a>
+      </div>
     </div>
   );
 }
