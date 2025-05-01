@@ -1,3 +1,4 @@
+export const prerender = false;
 import type { APIRoute } from "astro";
 import { and, commits, db, gte, lt, sql } from "astro:db";
 
