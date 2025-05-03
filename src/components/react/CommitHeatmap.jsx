@@ -4,6 +4,7 @@ import Tooltip from "cal-heatmap/plugins/Tooltip";
 import LegendLite from "cal-heatmap/plugins/LegendLite";
 import CalendarLabel from "cal-heatmap/plugins/CalendarLabel";
 
+
 export default function CommitHeatmap({ availableYears, initialYear }) {
   const heatmapRef = useRef(null);
   const cal = useRef(null);
