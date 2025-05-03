@@ -4,7 +4,7 @@
     "label": "Full Stack Shopify Expert",
     "email": "gary@garybleasdale.com",
     "phone": "5515981012944 ",
-    "url": "https://johndoe.dev",
+    "url": "https://garybleasdale.com",
     "image": "/profile.jpg",
     "summary": "Passionate developer with 5+ years of experience in building web applications.",
     "location": {
@@ -18,7 +18,7 @@
       {
         "network": "WhatsApp",
         "username": "gary-bleasdale",
-        "url": ""
+        "url": "https://wa.me/5515981012944"
       },
       {
         "network": "LinkedIn",
@@ -81,13 +81,6 @@
         "Led the resolution of critical technical issues, ensuring optimal functionality and user experience across multiple Havaianas Latin America e-commerce platforms.",
         "Served as the central point of contact for all Shopify-related inquiries, effectively communicating technical solutions to the Product Owner for Havaianas LATAM, Mahta, and other stakeholders."
       ]
-    },
-    {
-      "name": "Union Neil | Assistência Médica Domiciliar",
-      "position": "Co-Founder",
-      "startDate": "2022-02-01",
-      "endDate": "2022-03-31",
-      "highlights": []
     },
     {
       "name": "Sítio São Rafael",
@@ -155,11 +148,11 @@
   ],
   "volunteer": [
     {
-      "organization": "Open Source Initiative",
-      "position": "Contributor",
-      "url": "https://opensource.org",
-      "startDate": "2021-01-01",
-      "summary": "Contributing to open-source projects and helping maintain documentation."
+      "organization": "Union Neil | Premium Home Care",
+      "position": "Co-founder & Partner",
+      "url": "https://unionneil.com.br",
+      "startDate": "2022-06-01",
+      "summary": "Building Brazil's most highly-regarded home care company."
     }
   ],
   "education": [
@@ -169,10 +162,7 @@
       "studyType": "BA",
       "startDate": "2009-09-01",
       "endDate": "2012-06-01",
-      "score": "1st Class Honours",
-      "courses": [
-        "DB1101 - Basic SQL"
-      ]
+      "score": "1st Class Honours"
     }
   ],
   "skills": [
@@ -259,11 +249,76 @@
   ],
   "projects": [
     {
-      "name": "Portfolio Website",
-      "description": "A personal website showcasing my work and skills.",
+      "name": "Havaianas USA & Canada",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
       "isActive": true,
       "highlights": [
-        "Built with love using the Astrolio template",
+        "Shopify 2.0 Theme",
+        "Responsive design using Astro, Typescript, and Ninja Keys",
+        "Integrated with GitHub API to display projects",
+        "Employed the JSON Resume format for easy updates"
+      ],
+      "github": "https://github.com/jsonresume",
+      "url": "https://jsonresume.org"
+    },
+    {
+      "name": "Havaianas Global (LATAM & APAC)",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "isActive": true,
+      "highlights": [
+        "Shopify 2.0 Theme",
+        "Responsive design using Astro, Typescript, and Ninja Keys",
+        "Integrated with GitHub API to display projects",
+        "Employed the JSON Resume format for easy updates"
+      ],
+      "github": "https://github.com/jsonresume",
+      "url": "https://jsonresume.org"
+    },
+    {
+      "name": "Havaianas LATAM",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "isActive": false,
+      "highlights": [
+        "Shopify 2.0 Theme",
+        "Responsive design using Astro, Typescript, and Ninja Keys",
+        "Integrated with GitHub API to display projects",
+        "Employed the JSON Resume format for easy updates"
+      ],
+      "github": "https://github.com/jsonresume",
+      "url": "https://jsonresume.org"
+    },
+    {
+      "name": "Havaianas USA Integrations App",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "isActive": true,
+      "highlights": [
+        "Shopify 2.0 Theme",
+        "Responsive design using Astro, Typescript, and Ninja Keys",
+        "Integrated with GitHub API to display projects",
+        "Employed the JSON Resume format for easy updates"
+      ],
+      "github": "https://github.com/jsonresume",
+      "url": "https://jsonresume.org"
+    },
+    {
+      "name": "Havaianas USA Discount Functions App",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "isActive": true,
+      "highlights": [
+        "Shopify 2.0 Theme",
+        "Responsive design using Astro, Typescript, and Ninja Keys",
+        "Integrated with GitHub API to display projects",
+        "Employed the JSON Resume format for easy updates"
+      ],
+      "github": "https://github.com/jsonresume",
+      "url": "https://jsonresume.org"
+    },
+    {
+      "name": "Union Neil Homepage",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "isActive": true,
+      "highlights": [
+        "Shopify 2.0 Theme",
         "Responsive design using Astro, Typescript, and Ninja Keys",
         "Integrated with GitHub API to display projects",
         "Employed the JSON Resume format for easy updates"

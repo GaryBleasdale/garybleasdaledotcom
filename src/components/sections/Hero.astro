@@ -35,14 +35,18 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
       <footer class="no-print">
         {
           email && (
-            <a
-              href={`mailto:${email}`}
-              title={`Email ${name} at ${email}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon name="mail" />
-            </a>
+            <div class="telephone-icon">
+              <a title={`Email ${name} at ${email}`}>
+                <Icon name="mail" />
+              </a>
+              <div class="telephone-details-container">
+                <div class="telephone-details-ruler" />
+                <div class="telephone-details">
+                  Send an email to gary@garybleasdale.com
+                  <span id="copy-email">Copy email</span>
+                </div>
+              </div>
+            </div>
           )
         }
         {
@@ -72,6 +76,33 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
     </figure>
   </div>
 </Section>
+
+<script>
+  let telephoneIcon = document.querySelector(".telephone-icon");
+  telephoneIcon?.addEventListener("click", function () {
+    console.log(telephoneIcon);
+    const detailsContainer = this.querySelector(".telephone-details-container");
+    detailsContainer.style.display = "block";
+  });
+  document.addEventListener("click", function (e) {
+    console.log(e.target);
+    if (!e.target!.closest(".telephone-icon")) {
+      console.log("running remove style");
+      const detailsContainer = document.querySelector(
+        ".telephone-details-container"
+      );
+      detailsContainer.style.display = "none";
+      telephoneIcon.classList.remove("hovered-link");
+    } else {
+      telephoneIcon.classList.add("hovered-link");
+    }
+  });
+
+  const emailCopy = document.getElementById("copy-email");
+  emailCopy?.addEventListener("click", function () {
+    navigator.clipboard.writeText("gary@garybleasdale.com");
+  });
+</script>
 
 <style>
   .container {
@@ -146,6 +177,35 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
   footer a:hover {
     background: #eee;
     border: 1px solid #ddd;
+  }
+
+  .hovered-link {
+    background: #eee;
+    border: 1px solid #ddd;
+  }
+
+  .telephone-icon {
+    position: relative;
+  }
+
+  .telephone-details-container {
+    display: none;
+  }
+
+  .telephone-details-ruler {
+    height: 5px;
+    width: 50px;
+    position: absolute;
+  }
+  .telephone-details {
+    position: absolute;
+    color: #777;
+    font-size: 12px;
+    border: 1px solid #eee;
+    padding: 4px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin-top: 5px;
   }
 
   @media (width <= 700px) {
