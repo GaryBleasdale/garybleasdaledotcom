@@ -27,6 +27,7 @@
     "hotkeypad": "^1.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-toggle-dark-mode": "^1.1.1",
     "typescript": "^5.8.3"
   },
   "devDependencies": {

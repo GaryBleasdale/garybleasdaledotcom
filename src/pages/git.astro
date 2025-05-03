@@ -5,6 +5,9 @@ import { db, commits, sql } from "astro:db";
 import { basics } from "@cv";
 const { name } = basics;
 import "../styles/calHeatmap.css";
+import { Icon } from "astro-icon/components";
+
+let githubBasics = basics.profiles.find((el) => el.network === "GitHub");
 
 const yearResult = await db
   .selectDistinct({
@@ -19,7 +22,7 @@ const initialYear =
   availableYears.length > 0 ? availableYears[0] : new Date().getFullYear();
 ---
 
-<Layout title=`${name}: Git`>
+<Layout title=`${name}: Git` backgroundColor={"#22272d"}>
   <div
     style={{
       background: "#22272d",
@@ -29,13 +32,36 @@ const initialYear =
       overflow: "hidden",
       height: "100vh",
       width: "100vw",
+      maxWidth: "840px",
+      margin: "auto",
+      display: "flex",
+      flexDirection: "column",
+      gap: "10px",
     }}
   >
-    <div>Heatmaps</div>
-    <p>
-      The below is a commit heatmap for the repos on my local machine, which is
-      the ultimate source of truth for all the project I have worked on
-    </p>
+    <h1>Github-like commit calendar</h1>
+    <div>
+      This is a commit heatmap for the production repos hosted on my local
+      machine, few of which are on Github. Data is automatically updated every
+      day at 4:35 AM EST.
+    </div>
+    <div style={{ display: "flex", alignItems: "center", gap: "3px" }}>
+      You can visit my Github profile here:
+      <a href={githubBasics!.url} target="_blank">
+        <Icon
+          name="simple-icons:github"
+          class="icon hero-icon"
+          style={{
+            backgroundColor: "white",
+            color: "#22272d",
+            width: "20px",
+            height: "20px",
+            borderRadius: "2px",
+            padding: "1px",
+          }}
+        />
+      </a>
+    </div>
     <div>
       <CommitHeatmap
         client:load

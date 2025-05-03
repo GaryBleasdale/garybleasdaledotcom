@@ -182,6 +182,7 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
           </div>
         )}
           </div>
+          <div style={{ display: "flex", justifyContent: "space-between", flexWrap:"wrap", gap:"15px"}}>
           <div style={{ display: "flex"}}>
             {availableYears.map((year) => (
               <button
@@ -205,10 +206,9 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
                 {year}
               </button>
             ))}
+                    
           </div>
-        </div>
-
-        <div style={{gap:'10px', display:'flex', justifyContent: 'flex-end'}}>
+          <div style={{gap:'10px', display:'flex', justifyContent: 'flex-end'}}>
           <a
             className="button button--sm button--secondary margin-top--sm"
             href="#"
@@ -231,6 +231,11 @@ export default function CommitHeatmap({ availableYears, initialYear }) {
             Next →
           </a>
         </div>
+          </div>
+
+        </div>
+
+
        
       </div>
     </div>

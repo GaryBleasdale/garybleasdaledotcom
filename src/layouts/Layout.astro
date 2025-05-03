@@ -1,14 +1,17 @@
 ---
-import type { Basics } from "@/data/cv"
-import { basics as basicsData } from "@cv"
+import type { Basics } from "@/data/cv";
+import { basics as basicsData } from "@cv";
 
 interface Props {
-  title: string
+  title: string;
+  backgroundColor: string;
 }
 
-const { title } = Astro.props
+const { title, backgroundColor } = Astro.props;
 
-const { image, summary, url="" } = basicsData as Basics
+let currentBackgroundColor = backgroundColor ? backgroundColor : "#fff";
+
+const { image, summary, url = "" } = basicsData as Basics;
 ---
 
 <!doctype html>
@@ -29,13 +32,13 @@ const { image, summary, url="" } = basicsData as Basics
     <meta property="og:image" content="" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:domain" content={url.split("//")[1] ?? ''} />
+    <meta property="twitter:domain" content={url.split("//")[1] ?? ""} />
     <meta property="twitter:url" content={url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={summary} />
     <meta name="twitter:image" content="" />
   </head>
-  <body>
+  <body style={{ backgroundColor: currentBackgroundColor }}>
     <slot />
   </body>
 </html>
@@ -49,7 +52,6 @@ const { image, summary, url="" } = basicsData as Basics
       "Courier New",
       Courier,
       monospace;
-    background: #fff;
     letter-spacing: -0.025rem;
   }
 
