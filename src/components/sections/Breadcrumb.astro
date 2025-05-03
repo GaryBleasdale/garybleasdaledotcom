@@ -1,0 +1,44 @@
+---
+export const prerender = false;
+const { pathname } = Astro.url;
+let paths = pathname.split("/").filter((path) => Boolean(path));
+
+let { style } = Astro.props;
+
+let breadcrumbs = paths.map((segment, idx) => {
+  return {
+    name: segment,
+    href: "/" + paths.slice(0, idx + 1).join("/"),
+  };
+});
+---
+
+{
+  paths.length > 0 && (
+    <nav aria-label="Breadcrumb" style={style}>
+      <ol style="display: flex; gap: 0.5em; list-style: none; padding: 0; margin: 0;">
+        <li>
+          <a href="/" style={{ ...style, textDecoration: "underline" }}>
+            HOME
+          </a>
+        </li>
+        {breadcrumbs.map((crumb, idx) => (
+          <li style="display: flex; align-items: center;">
+            <span aria-hidden="true" style="margin: 0 0.5em;">
+              >
+            </span>
+            {idx === breadcrumbs.length - 1 ? (
+              <span style={{ fontWeight: "bold" }}>
+                {crumb.name.toUpperCase()}
+              </span>
+            ) : (
+              <a href={crumb.href} style={{ textDecoration: "underline" }}>
+                {crumb.name.toUpperCase()}
+              </a>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}

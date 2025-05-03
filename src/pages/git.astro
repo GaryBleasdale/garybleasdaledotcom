@@ -1,6 +1,7 @@
 ---
 export const prerender = false;
 import CommitHeatmap from "@/components/react/CommitHeatmap";
+import Breadcrumb from "@/components/sections/Breadcrumb.astro";
 import Layout from "@/layouts/Layout.astro";
 import { db, commits, sql } from "astro:db";
 import { basics } from "@cv";
@@ -40,6 +41,7 @@ const initialYear =
       gap: "10px",
     }}
   >
+    <Breadcrumb style={{ color: "#adbac7" }} />
     <h1>Github-like commit calendar</h1>
     <div>
       This is a commit heatmap for the production repos hosted on my local

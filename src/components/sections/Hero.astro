@@ -51,13 +51,13 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
 
             return (
               <a
-                href={url}
+                href={network === "GitHub" ? "/git" : url}
                 title={
                   network === "WhatsApp"
                     ? `Talk to ${name} on ${network}`
                     : `Visit ${name}'s on ${network}`
                 }
-                target="_blank"
+                target={network === "GitHub" ? "_self" : "_blank"}
                 rel="noopener noreferrer"
               >
                 {iconName && <Icon name={iconName} class="icon hero-icon" />}

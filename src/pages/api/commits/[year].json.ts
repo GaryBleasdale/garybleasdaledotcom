@@ -79,13 +79,3 @@ export const GET: APIRoute = async ({ params }) => {
         );
     }
 };
-
-export function getStaticPaths() {
-    return [
-        { params: { year: "2025" } },
-        { params: { year: "2024" } },
-        { params: { year: "2023" } },
-        { params: { year: "2022" } },
-        { params: { year: "2021" } },
-    ];
-}
