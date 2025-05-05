@@ -35,15 +35,19 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
       <footer class="no-print">
         {
           email && (
-            <div class="telephone-icon">
-              <a title={`Email ${name} at ${email}`}>
+            <div class="email-icon">
+              <a title={`Email ${name} at ${email}`} class="email-a">
                 <Icon name="mail" />
               </a>
-              <div class="telephone-details-container">
-                <div class="telephone-details-ruler" />
-                <div class="telephone-details">
-                  Send an email to gary@garybleasdale.com
-                  <span id="copy-email">Copy email</span>
+              <div class="email-details-container">
+                <div class="email-details">
+                  <span>Send an email to gary@garybleasdale.com</span>
+                  <span id="copy-email">
+                    <Icon name="copy" />
+                  </span>
+                  <div class="email-copy-success">
+                    Email successfully copied!
+                  </div>
                 </div>
               </div>
             </div>
@@ -78,29 +82,45 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
 </Section>
 
 <script>
-  let telephoneIcon = document.querySelector(".telephone-icon");
-  telephoneIcon?.addEventListener("click", function () {
-    console.log(telephoneIcon);
-    const detailsContainer = this.querySelector(".telephone-details-container");
+  let emailIcon = document.querySelector(".email-icon")!;
+  let emailAnchor = document.querySelector(".email-a")!;
+  let detailsContainer: HTMLDivElement = document.querySelector(
+    ".email-details-container"
+  )!;
+  let emailContainerIsOpen = false;
+
+  emailIcon?.addEventListener("click", function () {
     detailsContainer.style.display = "block";
+    emailContainerIsOpen = true;
   });
   document.addEventListener("click", function (e) {
-    console.log(e.target);
-    if (!e.target!.closest(".telephone-icon")) {
-      console.log("running remove style");
-      const detailsContainer = document.querySelector(
-        ".telephone-details-container"
-      );
+    let target = e.target as HTMLInputElement;
+    if (!target.closest(".email-icon")) {
       detailsContainer.style.display = "none";
-      telephoneIcon.classList.remove("hovered-link");
+      emailAnchor.classList.remove("active-link");
+      emailContainerIsOpen = false;
     } else {
-      telephoneIcon.classList.add("hovered-link");
+      emailAnchor.classList.add("active-link");
     }
   });
+  emailIcon.addEventListener("mouseenter", function () {
+    emailAnchor?.classList.add("active-link");
+  });
+  emailIcon.addEventListener("mouseleave", function () {
+    if (emailContainerIsOpen === false)
+      emailAnchor?.classList.remove("active-link");
+  });
 
-  const emailCopy = document.getElementById("copy-email");
-  emailCopy?.addEventListener("click", function () {
-    navigator.clipboard.writeText("gary@garybleasdale.com");
+  detailsContainer?.addEventListener("click", function () {
+    navigator.clipboard.writeText("gary@garybleasdale.com").then(() => {
+      let success: HTMLDivElement = document.querySelector(
+        ".email-copy-success"
+      )!;
+      success.style.display = "block";
+      setTimeout(() => {
+        success.style.display = "none";
+      }, 3000);
+    });
   });
 </script>
 
@@ -174,40 +194,61 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
     transition: all 0.3s ease;
   }
 
-  footer a:hover {
+  footer a:hover:not(.email-a) {
     background: #eee;
     border: 1px solid #ddd;
   }
 
-  .hovered-link {
+  .active-link {
     background: #eee;
     border: 1px solid #ddd;
   }
 
-  .telephone-icon {
+  .email-icon {
     position: relative;
   }
+  .email-icon:hover {
+    cursor: pointer;
+  }
 
-  .telephone-details-container {
+  .email-details-container {
     display: none;
   }
 
-  .telephone-details-ruler {
+  .email-details-ruler {
     height: 5px;
     width: 50px;
     position: absolute;
   }
-  .telephone-details {
+  .email-details {
     position: absolute;
+    width: 321px;
+    display: flex;
+    flex-wrap: wrap;
     color: #777;
     font-size: 12px;
     border: 1px solid #eee;
+    background-color: white;
     padding: 4px;
     border-radius: 6px;
     transition: all 0.3s ease;
     margin-top: 5px;
+    gap: 10px;
+  }
+  .email-copy-success {
+    display: none;
+    background: palegreen;
+    color: darkolivegreen;
+    width: 100%;
+    padding: 5px;
+    border-radius: 7px;
   }
 
+  #copy-email:active {
+    background-color: darkslategrey;
+    color: white;
+    border-radius: 3px;
+  }
   @media (width <= 700px) {
     .container {
       flex-direction: column-reverse;
