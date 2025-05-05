@@ -41,7 +41,10 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
               </a>
               <div class="email-details-container">
                 <div class="email-details">
-                  <span>Send an email to gary@garybleasdale.com</span>
+                  <span>
+                    Send an email to{" "}
+                    <strong id="email-value">{`${email}`}</strong>{" "}
+                  </span>
                   <span id="copy-email">
                     <Icon name="copy" />
                   </span>
@@ -87,12 +90,14 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
   let detailsContainer: HTMLDivElement = document.querySelector(
     ".email-details-container"
   )!;
+  let emailDetails: HTMLDivElement = document.querySelector(".email-details")!;
   let emailContainerIsOpen = false;
 
   emailIcon?.addEventListener("click", function () {
     detailsContainer.style.display = "block";
     emailContainerIsOpen = true;
   });
+
   document.addEventListener("click", function (e) {
     let target = e.target as HTMLInputElement;
     if (!target.closest(".email-icon")) {
@@ -103,22 +108,30 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
       emailAnchor.classList.add("active-link");
     }
   });
+
   emailIcon.addEventListener("mouseenter", function () {
     emailAnchor?.classList.add("active-link");
   });
+
   emailIcon.addEventListener("mouseleave", function () {
     if (emailContainerIsOpen === false)
       emailAnchor?.classList.remove("active-link");
   });
 
   detailsContainer?.addEventListener("click", function () {
-    navigator.clipboard.writeText("gary@garybleasdale.com").then(() => {
+    let emailValue: string = document.getElementById("email-value")?.innerText!;
+
+    navigator.clipboard.writeText(emailValue).then(() => {
       let success: HTMLDivElement = document.querySelector(
         ".email-copy-success"
       )!;
-      success.style.display = "block";
+      emailDetails.style.height = "57px";
+      success.style.opacity = "1";
       setTimeout(() => {
-        success.style.display = "none";
+        success.style.opacity = "0";
+        setTimeout(() => {
+          emailDetails.style.height = "25px";
+        }, 150);
       }, 3000);
     });
   });
@@ -222,6 +235,7 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
   }
   .email-details {
     position: absolute;
+    height: 25px;
     width: 321px;
     display: flex;
     flex-wrap: wrap;
@@ -231,17 +245,18 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
     background-color: white;
     padding: 4px;
     border-radius: 6px;
-    transition: all 0.3s ease;
+    transition: display 0.3s ease;
     margin-top: 5px;
     gap: 10px;
   }
   .email-copy-success {
-    display: none;
+    opacity: 0;
     background: palegreen;
     color: darkolivegreen;
     width: 100%;
     padding: 5px;
     border-radius: 7px;
+    transition: all 150ms linear;
   }
 
   #copy-email:active {

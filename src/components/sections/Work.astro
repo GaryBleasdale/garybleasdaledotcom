@@ -1,55 +1,49 @@
 ---
-import Section from "../Section.astro"
-import { work as workData } from "@cv"
-import type { Work } from "@/data/cv"
-const work = workData as Work[]
+import Section from "../Section.astro";
+import { work as workData } from "@cv";
+import type { Work } from "@/data/cv";
+const work = workData as Work[];
 ---
 
-<Section title="Work">
+<Section title="Work history">
   <ul>
     {
-      work.map(
-        ({ name, startDate, endDate, position, summary, url="" }) => {
-          const startYear = new Date(startDate).getFullYear()
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Present"
+      work.map(({ name, startDate, endDate, position, summary, url = "" }) => {
+        const startYear = new Date(startDate).getFullYear();
+        const endYear =
+          endDate != null ? new Date(endDate).getFullYear() : "Present";
 
-          return (
-            <li>
-              <article>
-                <header>
-                  <div>
-                    <h3>
-                      <a href={url} title={`View ${name}`} target="_blank">
-                        {name}
-                      </a>
-                    </h3>
-                    <h4>{position}</h4>
-                  </div>
+        return (
+          <li>
+            <article>
+              <header>
+                <div>
+                  <h3>
+                    <a href={url} title={`View ${name}`} target="_blank">
+                      {name}
+                    </a>
+                  </h3>
+                  <h4>{position}</h4>
+                </div>
 
-                  <div>
-                    <time 
-                      datetime={startDate}
-                      data-title={startDate}>
-                        {startYear}
-                    </time>
-                    {" - "}
-                    <time 
-                      datetime={endDate}
-                      data-title={endDate}>
-                        {endYear}
-                    </time>
-                  </div>
-                </header>
+                <div>
+                  <time datetime={startDate} data-title={startDate}>
+                    {startYear}
+                  </time>
+                  {" - "}
+                  <time datetime={endDate} data-title={endDate}>
+                    {endYear}
+                  </time>
+                </div>
+              </header>
 
-                <footer>
-                  <p>{summary}</p>
-                </footer>
-              </article>
-            </li>
-          )
-        }
-      )
+              <footer>
+                <p>{summary}</p>
+              </footer>
+            </article>
+          </li>
+        );
+      })
     }
   </ul>
 </Section>
@@ -103,10 +97,15 @@ const work = workData as Work[]
     content: attr(data-title);
     background-color: #333;
     color: #fff;
-    font-size: .75rem;
-    font-family: Menlo, Monaco, Lucida Console, "Courier New", monospace;;
+    font-size: 0.75rem;
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      "Courier New",
+      monospace;
     position: absolute;
-    padding: .2rem .5rem;
+    padding: 0.2rem 0.5rem;
     bottom: -1.4rem;
     left: 50%;
     white-space: nowrap;

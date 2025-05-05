@@ -1,22 +1,33 @@
 ---
-import { Icon } from "astro-icon/components"
-import Section from "../Section.astro"
-import { projects as projectsData } from "@cv"
-import type { Projects } from "@/data/cv"
-const projects = projectsData as Projects[]
+import { Icon } from "astro-icon/components";
+import Section from "../Section.astro";
+import { projects as projectsData } from "@cv";
+import type { Projects } from "@/data/cv";
+const projects = projectsData as Projects[];
 ---
 
 <Section title="Projects">
   <ul>
     {
       projects.map(
-        ({ url, description, highlights = [], name, isActive = false, github = "" }) => {
+        ({
+          url,
+          description,
+          highlights = [],
+          name,
+          isActive = false,
+          github = "",
+        }) => {
           return (
             <li>
               <article>
                 <header>
                   <h3>
-                    <a href={url} target="_blank" title={`View the project ${name}`}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      title={`View the project ${name}`}
+                    >
                       {name}
                     </a>
                     {isActive && <span>•</span>}
@@ -35,12 +46,12 @@ const projects = projectsData as Projects[]
                 </header>
                 <footer>
                   {highlights.map((highlight) => {
-                    return <span>{highlight}</span>
+                    return <span>{highlight}</span>;
                   })}
                 </footer>
               </article>
             </li>
-          )
+          );
         }
       )
     }
@@ -50,7 +61,6 @@ const projects = projectsData as Projects[]
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin-inline: -16px;
   }

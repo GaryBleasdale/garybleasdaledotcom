@@ -6,7 +6,7 @@
     "phone": "5515981012944 ",
     "url": "https://garybleasdale.com",
     "image": "/profile.jpg",
-    "summary": "Passionate developer with 5+ years of experience in building web applications.",
+    "summary": "Dedicated to creating happy clients through timely, organized and proactive web development and team management.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -38,19 +38,21 @@
       "position": "Shopify Tech Lead for Havaianas North America",
       "startDate": "2025-01-01",
       "endDate": "Present",
+      "summary": "Responsible for all development work for Havaianas USA, including managing Dev Team, Theme UI, Backend Integrations, Backend Extensions, Performance, SEO, CI/CD, and answering Shopify-related queries & troubleshooting from other Shopify stores served by the company.",
       "highlights": [
         "Appointed Tech Lead based on a recommendation from Havaianas' International Technical Director Ecommerce.",
         "Accountable for the technical direction of the Havaianas North America Shopify platform.",
-        "Recognized by the Head of DTC for Havaianas US for significant improvements in development team responsiveness, speed, and overall quality.",
+        "Recognized by the Head of DTC for Havaianas US for significant improvements in development team responsiveness, speed, and overall deliverable quality.",
         "Serve as the primary technical architect for the business team, refining requirements, designing custom solutions, and translating them into actionable development tasks.",
-        "Hands-on developer contributing to both front-end development and back-end integrations, ensuring Shopify themes and third-party integrations function as intended."
+        "Hands-on developer contributing to both front-end development and back-end integrations, ensuring Shopify themes and third-party integrations function with minimal downtime or errors."
       ]
     },
     {
       "name": "ioasys",
-      "position": "Shopify Developer for Havaianas North America",
+      "position": "Lead Shopify Developer for Havaianas North America",
       "startDate": "2024-01-01",
       "endDate": "2024-12-31",
+      "summary": "",
       "highlights": [
         "Served as Lead Developer for the migration of Havaianas North America from Salesforce to Shopify, a key corporate project recognized by the CEO and other C-level executives of Alpargatas S.A. (Havaianas' holding company).",
         "Played a critical role in knowledge transfer and project success by mentoring a team of three developers with prior Salesforce experience, accelerating their onboarding to the new Shopify store.",
@@ -76,6 +78,7 @@
       "position": "Shopify Developer",
       "startDate": "2022-03-01",
       "endDate": "2022-09-30",
+      "summary": "hahabink",
       "highlights": [
         "Provided dedicated support for a diverse client portfolio, primarily focused on Havaianas Latin America (excluding Brazil), as well as VC-backed startups like Mahta.",
         "Led the resolution of critical technical issues, ensuring optimal functionality and user experience across multiple Havaianas Latin America e-commerce platforms.",
@@ -83,7 +86,7 @@
       ]
     },
     {
-      "name": "Sítio São Rafael",
+      "name": "São Rafael Farm",
       "position": "Agri-Entrepreneur",
       "startDate": "2020-12-01",
       "endDate": "2022-01-31",
@@ -152,7 +155,7 @@
       "position": "Co-founder & Partner",
       "url": "https://unionneil.com.br",
       "startDate": "2022-06-01",
-      "summary": "Building Brazil's most highly-regarded home care company."
+      "summary": "On a mission to reliably offer the highest possible level of care to homebound patients suffering from neurogenerative diseases."
     }
   ],
   "education": [
@@ -200,19 +203,22 @@
       ]
     },
     {
-      "name": "Git",
+      "name": "Version Control/Devops",
       "level": "Intermediate",
       "keywords": [
-        "Version Control",
-        "Collaboration"
+        "git",
+        "github",
+        "azuredevops",
+        "yaml",
+        "bash"
       ]
     },
     {
-      "name": "GitHub",
-      "level": "Expert",
+      "name": "Node.js",
+      "level": "Intermediate",
       "keywords": [
-        "Version Control",
-        "Collaboration"
+        "Backend",
+        "API Development"
       ]
     },
     {
@@ -227,17 +233,26 @@
       "name": "Frontend",
       "level": "Intermediate",
       "keywords": [
+        "HTML",
+        "CSS",
         "React",
-        "Svelte",
         "tailwind"
       ]
     },
     {
-      "name": "TypeScript",
+      "name": "Fullstack",
       "level": "Intermediate",
       "keywords": [
         "JavaScript",
-        "Static Typing"
+        "Typescript"
+      ]
+    },
+    {
+      "name": "Backend",
+      "level": "Intermediate",
+      "keywords": [
+        "node.js",
+        "graphql"
       ]
     }
   ],
@@ -315,6 +330,32 @@
     },
     {
       "name": "Union Neil Homepage",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "isActive": true,
+      "highlights": [
+        "Shopify 2.0 Theme",
+        "Responsive design using Astro, Typescript, and Ninja Keys",
+        "Integrated with GitHub API to display projects",
+        "Employed the JSON Resume format for easy updates"
+      ],
+      "github": "https://github.com/jsonresume",
+      "url": "https://jsonresume.org"
+    },
+    {
+      "name": "Queijos Ipanema",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "isActive": true,
+      "highlights": [
+        "Shopify 2.0 Theme",
+        "Responsive design using Astro, Typescript, and Ninja Keys",
+        "Integrated with GitHub API to display projects",
+        "Employed the JSON Resume format for easy updates"
+      ],
+      "github": "https://github.com/jsonresume",
+      "url": "https://jsonresume.org"
+    },
+    {
+      "name": "Sítio São Rafael",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
       "isActive": true,
       "highlights": [

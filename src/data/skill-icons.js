@@ -30,6 +30,9 @@ export const SKILL_ICON_MAP = {
   github: 'devicon:github',
   linux: 'devicon:linux',
   docker: 'devicon:docker',
+  yaml:"devicon:yaml",
+  bash:"devicon:bash",
+  azuredevops:"devicon:azuredevops",
 
   // Databases
   mysql: 'devicon:mysql',
