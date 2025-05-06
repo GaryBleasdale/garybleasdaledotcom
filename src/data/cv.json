@@ -38,7 +38,7 @@
       "position": "Shopify Tech Lead for Havaianas North America",
       "startDate": "2025-01-01",
       "endDate": "Present",
-      "summary": "Responsible for all development work for Havaianas USA, including managing Dev Team, Theme UI, Backend Integrations, Backend Extensions, Performance, SEO, CI/CD, and answering Shopify-related queries & troubleshooting from other Shopify stores served by the company.",
+      "summary": "Responsible for all development work for Havaianas USA, including managing Dev Team, Theme UI, Backend Integrations, Backend Extensions, Performance, SEO, CI/CD.  Also, offering technical support for other Shopify stores served by the company.",
       "highlights": [
         "Appointed Tech Lead based on a recommendation from Havaianas' International Technical Director Ecommerce.",
         "Accountable for the technical direction of the Havaianas North America Shopify platform.",
@@ -49,12 +49,12 @@
     },
     {
       "name": "ioasys",
-      "position": "Lead Shopify Developer for Havaianas North America",
+      "position": "Head Shopify Developer for Havaianas North America",
       "startDate": "2024-01-01",
       "endDate": "2024-12-31",
-      "summary": "",
+      "summary": "Main developer responsible for migrating Havaianas USA from Salesforce to Shopify.  Built a brand new theme for the brand, designed by renowned agency 1R, built the integrations with the ERP, DAM, PIM, Returns platform, and mentored the team of 3 who worked on this project, who were unfamiliar with Shopify.",
       "highlights": [
-        "Served as Lead Developer for the migration of Havaianas North America from Salesforce to Shopify, a key corporate project recognized by the CEO and other C-level executives of Alpargatas S.A. (Havaianas' holding company).",
+        "Served as Head Developer for the migration of Havaianas North America from Salesforce to Shopify, a key corporate project recognized by the CEO and other C-level executives of Alpargatas S.A. (Havaianas' holding company).",
         "Played a critical role in knowledge transfer and project success by mentoring a team of three developers with prior Salesforce experience, accelerating their onboarding to the new Shopify store.",
         "Led the development of a brand-new, mobile-first Shopify theme from scratch, collaborating with a leading LA design agency to align with brand aesthetics and user experience principles.",
         "Designed and developed a custom application using Remix and Node.js to integrate Shopify-generated orders with ERP (SAP), inventory management (SAP), returns platforms (Narvar), and product updates (Akeneo).",
@@ -66,6 +66,7 @@
       "position": "Shopify Developer for Havaianas LATAM & APAC",
       "startDate": "2022-10-01",
       "endDate": "2023-12-31",
+      "summary": "In-housed all Shopify store management and development, which up until that point had been done by an agency.  The successful in-housing of Shopify expertise within the company was a key factor in allowing the subsequent migration of Havaianas' two biggest stores, Brazil and USA, to Shopify.",
       "highlights": [
         "Transitioned into a direct role within Havaianas upon request from Havaianas LATAM's Digital Manager, assuming responsibility for the internal management and development of their Shopify platform, marking a significant career advancement based on performance at Buda Digital.",
         "Selected by Senior Management to deliver a presentation on Shopify for a technical, non-Shopify-specialist audience, showcasing expertise and communication skills.",
@@ -78,7 +79,7 @@
       "position": "Shopify Developer",
       "startDate": "2022-03-01",
       "endDate": "2022-09-30",
-      "summary": "hahabink",
+      "summary": "Offered client-facing theme development support, such as bug-fixing and feature-building, for various of Buda's clients, including Havaianas, Mahta and Queijos Ipanema.",
       "highlights": [
         "Provided dedicated support for a diverse client portfolio, primarily focused on Havaianas Latin America (excluding Brazil), as well as VC-backed startups like Mahta.",
         "Led the resolution of critical technical issues, ensuring optimal functionality and user experience across multiple Havaianas Latin America e-commerce platforms.",
@@ -277,32 +278,6 @@
       "url": "https://jsonresume.org"
     },
     {
-      "name": "Havaianas Global (LATAM & APAC)",
-      "description": "North American eComm for legendary flip-flop brand, Havaianas",
-      "isActive": true,
-      "highlights": [
-        "Shopify 2.0 Theme",
-        "Responsive design using Astro, Typescript, and Ninja Keys",
-        "Integrated with GitHub API to display projects",
-        "Employed the JSON Resume format for easy updates"
-      ],
-      "github": "https://github.com/jsonresume",
-      "url": "https://jsonresume.org"
-    },
-    {
-      "name": "Havaianas LATAM",
-      "description": "North American eComm for legendary flip-flop brand, Havaianas",
-      "isActive": false,
-      "highlights": [
-        "Shopify 2.0 Theme",
-        "Responsive design using Astro, Typescript, and Ninja Keys",
-        "Integrated with GitHub API to display projects",
-        "Employed the JSON Resume format for easy updates"
-      ],
-      "github": "https://github.com/jsonresume",
-      "url": "https://jsonresume.org"
-    },
-    {
       "name": "Havaianas USA Integrations App",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
       "isActive": true,
@@ -319,6 +294,32 @@
       "name": "Havaianas USA Discount Functions App",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
       "isActive": true,
+      "highlights": [
+        "Shopify 2.0 Theme",
+        "Responsive design using Astro, Typescript, and Ninja Keys",
+        "Integrated with GitHub API to display projects",
+        "Employed the JSON Resume format for easy updates"
+      ],
+      "github": "https://github.com/jsonresume",
+      "url": "https://jsonresume.org"
+    },
+    {
+      "name": "Havaianas Global (LATAM & APAC)",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "isActive": true,
+      "highlights": [
+        "Shopify 2.0 Theme",
+        "Responsive design using Astro, Typescript, and Ninja Keys",
+        "Integrated with GitHub API to display projects",
+        "Employed the JSON Resume format for easy updates"
+      ],
+      "github": "https://github.com/jsonresume",
+      "url": "https://jsonresume.org"
+    },
+    {
+      "name": "Havaianas LATAM",
+      "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "isActive": false,
       "highlights": [
         "Shopify 2.0 Theme",
         "Responsive design using Astro, Typescript, and Ninja Keys",
