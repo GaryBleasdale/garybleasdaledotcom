@@ -1,5 +1,12 @@
-Gary M. Bleasdale's webpage.
+# Gary M. Bleasdale's Personal Website
 
-Lightly modified version of the ASTROLIO template: A responsive one-page portfolio template using Astro.
+Modified and extended version of the ASTROLIO template: A responsive one-page portfolio template using Astro.
 
-DB: AstroDB (drizzle) using Turso
+## Stack
+- **Fullstack Frameworks**: Astro, React
+- **Language**: Typescript
+- **Libraries**: AlpineJS, Cal-heatmap, Devicons
+- **Database**: AstroDB (ORM: Drizzle) using LibSQL (Turso)
+- **CI/CD**: Github
+- **Hosting**: Netlify
+- **Schemas**: JSON Resume (https://jsonresume.org/schema)

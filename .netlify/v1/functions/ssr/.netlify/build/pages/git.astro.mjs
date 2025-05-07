@@ -7,7 +7,7 @@ import Tooltip from 'cal-heatmap/plugins/Tooltip';
 import LegendLite from 'cal-heatmap/plugins/LegendLite';
 import CalendarLabel from 'cal-heatmap/plugins/CalendarLabel';
 import 'clsx';
-import { b as basics, $ as $$Layout, a as $$Icon } from '../chunks/Icon_CbnDTTob.mjs';
+import { b as basics, $ as $$Layout, a as $$Icon } from '../chunks/Icon_CeQNZbF9.mjs';
 import { d as db, c as commits } from '../chunks/_astro_db_GhweK_FF.mjs';
 /* empty css                               */
 import { sql } from '@astrojs/db/dist/runtime/virtual.js';

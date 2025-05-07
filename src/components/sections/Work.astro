@@ -2,53 +2,97 @@
 import Section from "../Section.astro";
 import { work as workData } from "@cv";
 import type { Work } from "@/data/cv";
+import Alpine from "alpinejs";
 const work = workData as Work[];
 ---
 
 <Section title="Work history">
   <ul>
     {
-      work.map(({ name, startDate, endDate, position, summary, url = "" }) => {
-        const startYear = new Date(startDate).getFullYear();
-        const endYear =
-          endDate != null ? new Date(endDate).getFullYear() : "Present";
+      work.map(
+        ({
+          name,
+          startDate,
+          endDate,
+          position,
+          summary,
+          highlights,
+          url = "",
+        }) => {
+          const startYear = new Date(startDate).getFullYear();
+          const endYear =
+            endDate != null ? new Date(endDate).getFullYear() : "Present";
+          return (
+            <li>
+              <article>
+                <header>
+                  <div>
+                    <h3>
+                      <a href={url} title={`View ${name}`} target="_blank">
+                        {name}
+                      </a>
+                    </h3>
+                    <h4>{position}</h4>
+                  </div>
 
-        return (
-          <li>
-            <article>
-              <header>
-                <div>
-                  <h3>
-                    <a href={url} title={`View ${name}`} target="_blank">
-                      {name}
-                    </a>
-                  </h3>
-                  <h4>{position}</h4>
-                </div>
+                  <div>
+                    <time datetime={startDate} data-title={startDate}>
+                      {startYear}
+                    </time>
+                    {" - "}
+                    <time datetime={endDate} data-title={endDate}>
+                      {endYear}
+                    </time>
+                  </div>
+                </header>
 
-                <div>
-                  <time datetime={startDate} data-title={startDate}>
-                    {startYear}
-                  </time>
-                  {" - "}
-                  <time datetime={endDate} data-title={endDate}>
-                    {endYear}
-                  </time>
-                </div>
-              </header>
-
-              <footer>
-                <p>{summary}</p>
-              </footer>
-            </article>
-          </li>
-        );
-      })
+                <footer>
+                  <p>{summary}</p>
+                </footer>
+                {highlights.length > 0 && (
+                  <div x-data="{open:false}" class="see-more-container">
+                    <div x-on:click="open = ! open" class="see-more-btn">
+                      <span class="see-more-btn">See more</span>
+                    </div>
+                    <ul x-show="open" class="highlight-list">
+                      {highlights.map((highlight) => {
+                        return <li>{highlight}</li>;
+                      })}
+                    </ul>
+                  </div>
+                )}
+              </article>
+            </li>
+          );
+        }
+      )
     }
   </ul>
 </Section>
 
 <style>
+  .see-more-btn {
+    display: flex;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-style: italic;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  .see-more-btn:hover {
+    text-decoration-color: black;
+    transition: 200ms linear all;
+  }
+
+  .highlight-list {
+    font-size: 14px;
+    margin-top: 20px;
+    list-style: inside;
+  }
+
   ul {
     display: flex;
     flex-direction: column;

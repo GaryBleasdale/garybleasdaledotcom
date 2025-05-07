@@ -12,14 +12,18 @@
     "check:cv": "node scripts/validator/check-cv.cjs"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/check": "^0.9.4",
     "@astrojs/db": "^0.14.12",
     "@astrojs/netlify": "^6.3.2",
     "@astrojs/react": "^4.2.5",
     "@iconify-json/devicon": "^1.2.23",
     "@iconify-json/simple-icons": "^1.2.33",
+    "@types/alpinejs": "^3.13.11",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "alpine": "^0.2.1",
+    "alpinejs": "^3.14.9",
     "astro": "^5.7.3",
     "astro-icon": "^1.1.5",
     "cal-heatmap": "^4.2.4",
