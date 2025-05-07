@@ -66,6 +66,7 @@ interface Education {
   url?: string;
   area: string;
   studyType?: string;
+  highlights?:string[];
   startDate: DateStr;
   endDate?: DateStr;
   score?: string;

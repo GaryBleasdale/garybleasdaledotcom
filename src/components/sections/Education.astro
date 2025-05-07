@@ -1,38 +1,63 @@
 ---
-import Section from "../Section.astro"
+import Section from "../Section.astro";
 
-import { education as educationData } from "@cv"
-import type { Education } from "@/data/cv"
-const education = educationData as Education[]
+import { education as educationData } from "@cv";
+import type { Education } from "@/data/cv";
+const education = educationData as Education[];
 ---
 
 <Section title="Education">
   <ul>
     {
-      education.map(({ institution, startDate, endDate, area, studyType, score }) => {
-        const startYear = new Date(startDate).getFullYear()
-        const endYear =
-          endDate != null ? new Date(endDate).getFullYear() : "Present"
-        const years = `${startYear} - ${endYear}`
+      education.map(
+        ({
+          institution,
+          url,
+          startDate,
+          endDate,
+          area,
+          studyType,
+          score,
+          highlights,
+        }) => {
+          const startYear = new Date(startDate).getFullYear();
+          const endYear =
+            endDate != null ? new Date(endDate).getFullYear() : "Present";
+          const years = `${startYear} - ${endYear}`;
 
-        return (
-          <li>
-            <article>
-              <header>
-                <div>
-                  <h3>{institution}</h3>
-                </div>
+          return (
+            <li>
+              <article>
+                <header>
+                  <div>
+                    <h3>
+                      <a href={url} target="_blank">
+                        {institution}
+                      </a>
+                    </h3>
+                  </div>
 
-                <time>{years}</time>
-              </header>
+                  <time>{years}</time>
+                </header>
 
-              <footer>
-                <p>{studyType && `${area} `}{studyType}, {score}</p>
-              </footer>
-            </article>
-          </li>
-        )
-      })
+                <footer>
+                  <p>
+                    {studyType && `${area} `}
+                    {studyType}, {score}
+                  </p>
+                  {highlights && (
+                    <div class="highlights-container">
+                      {highlights.map((highlight) => {
+                        return <span>{highlight}</span>;
+                      })}
+                    </div>
+                  )}
+                </footer>
+              </article>
+            </li>
+          );
+        }
+      )
     }
   </ul>
 </Section>
@@ -60,6 +85,21 @@ const education = educationData as Education[]
     color: #555;
     font-size: 0.85rem;
     min-width: 102px;
+  }
+
+  .highlights-container {
+    display: flex;
+    margin-top: 4px;
+    gap: 4px;
+  }
+
+  footer span {
+    border-radius: 6px;
+    background: #eee;
+    color: #444;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
   }
 
   @media (width <= 700px) {

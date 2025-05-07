@@ -162,11 +162,16 @@
   "education": [
     {
       "institution": "University of Exeter Business School",
+      "url": "https://business-school.exeter.ac.uk/",
       "area": "Business Economics",
       "studyType": "BA",
       "startDate": "2009-09-01",
       "endDate": "2012-06-01",
-      "score": "1st Class Honours"
+      "score": "1st Class Honours",
+      "highlights": [
+        "President of Student Council",
+        "Winner of Exeter Apprentice Award (Feat. Katie Hopkins)"
+      ]
     }
   ],
   "skills": [
