@@ -91,6 +91,7 @@
       "position": "Agri-Entrepreneur",
       "startDate": "2020-12-01",
       "endDate": "2022-01-31",
+      "summary": "Managed two harvests of Japanases Squash on a 10Ha farm, from hiring farm hands, pest control, all the way to selling the end product in the world's third-largest wholesale food market, the CEAGESP in São Paulo.",
       "highlights": []
     },
     {
@@ -98,6 +99,7 @@
       "position": "Country Manager Brazil & Argentina",
       "startDate": "2019-06-01",
       "endDate": "2020-05-31",
+      "summary": "Opened Infinia's Operations in Brazil after a successful launch in Argentina, and worked with clients such as Hyundai and Vivo.",
       "highlights": []
     },
     {
@@ -105,6 +107,7 @@
       "position": "Country Manager Argentina",
       "startDate": "2018-03-01",
       "endDate": "2019-05-31",
+      "summary": "Opened Infinia's Operations in Argentina, and worked with clients such as Burger King and Claro.",
       "highlights": []
     },
     {
@@ -112,6 +115,7 @@
       "position": "Director of Programmatic Ad Ops LATAM",
       "startDate": "2017-05-01",
       "endDate": "2018-02-28",
+      "summary": "Managed a team of 15 programmatic traders, responsible for over U$S10,000,000's worth of ad buys across LATAM.",
       "highlights": []
     },
     {
@@ -119,6 +123,7 @@
       "position": "Director - Argentina",
       "startDate": "2016-03-01",
       "endDate": "2017-05-31",
+      "summary": "Built Dentsu's prestigous Amnet Programmatic Trading Desk in Argentina from the ground up, mentoring hirees who later went on to great success in the industry.  Microsoft, General Motors and Honda were some of our clients.",
       "highlights": []
     },
     {
@@ -126,6 +131,7 @@
       "position": "Trading Manager",
       "startDate": "2015-06-01",
       "endDate": "2015-12-31",
+      "summary": "Promoted to Trading Manager, and made responsible for managing the Virgin account, worth over U$S 20,000,000 per annum, as well as managing and mentoring a team of two traders",
       "highlights": []
     },
     {
@@ -133,20 +139,23 @@
       "position": "Trader",
       "startDate": "2014-10-01",
       "endDate": "2015-05-31",
+      "summary": "My first foray into Programmatic Advertising.  Worked for Mitsubishi, among others.",
       "highlights": []
     },
     {
       "name": "Spiceworks",
       "position": "Account Manager",
-      "startDate": "2014-01-01",
+      "startDate": "2014-02-01",
       "endDate": "2014-09-30",
+      "summary": "Responsible for handling Advertising accounts for Spiceworks UK",
       "highlights": []
     },
     {
       "name": "eBay",
       "position": "Ad Operations Executive",
       "startDate": "2013-02-01",
-      "endDate": "2013-12-31",
+      "endDate": "2014-01-31",
+      "summary": "Learned the ropes of digital advertising in eBay's fast-paced offices in London.",
       "highlights": []
     }
   ],
