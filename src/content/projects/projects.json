@@ -1,0 +1,23 @@
+[
+    {
+        "id": "astrolio",
+        "title": "Astrolio Demo",
+        "description": "A demonstration project showcasing the features of the Astrolio Astro theme, including dynamic content and modern UI components.",
+        "videoUrl": "https://www.example.com/videos/astrolio-demo.mp4",
+        "externalUrl": "https://github.com/example/astrolio-demo"
+    },
+    {
+        "id": "cmdmenu",
+        "title": "CmdMenu",
+        "description": "A command menu component for web applications, inspired by command palettes in modern editors.",
+        "videoUrl": "https://www.example.com/videos/cmdmenu-demo.mp4",
+        "externalUrl": "https://github.com/example/cmdmenu"
+    },
+    {
+        "id": "nestedrepos",
+        "title": "Nested Repos Calendar",
+        "description": "A visualization tool for tracking activity across multiple nested git repositories using a calendar heatmap.",
+        "videoUrl": "https://www.example.com/videos/nested-repos-calendar.mp4",
+        "externalUrl": "https://github.com/example/nested-repos-calendar"
+    }
+]
