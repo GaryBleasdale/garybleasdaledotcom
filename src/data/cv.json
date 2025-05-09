@@ -75,7 +75,7 @@
       ]
     },
     {
-      "name": "Buda Digital",
+      "name": "Buda Digital | Shopify Plus Partner",
       "position": "Shopify Developer",
       "startDate": "2022-03-01",
       "endDate": "2022-09-30",
@@ -280,7 +280,11 @@
   "projects": [
     {
       "name": "Havaianas USA & Canada",
+      "id": "1",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "year_published": 2024,
+      "last_updated": 2025,
+      "still_participating": true,
       "isActive": true,
       "highlights": [
         "Shopify 2.0 Theme",
@@ -293,7 +297,11 @@
     },
     {
       "name": "Havaianas USA Integrations App",
+      "id": "2",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "year_published": 2024,
+      "last_updated": 2025,
+      "still_participating": true,
       "isActive": true,
       "highlights": [
         "Shopify 2.0 Theme",
@@ -306,7 +314,11 @@
     },
     {
       "name": "Havaianas USA Discount Functions App",
+      "id": "3",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "year_published": 2025,
+      "last_updated": 2025,
+      "still_participating": true,
       "isActive": true,
       "highlights": [
         "Shopify 2.0 Theme",
@@ -319,6 +331,10 @@
     },
     {
       "name": "Havaianas Global (LATAM & APAC)",
+      "id": "4",
+      "year_published": 2023,
+      "last_updated": 2024,
+      "still_participating": false,
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
       "isActive": true,
       "highlights": [
@@ -332,7 +348,11 @@
     },
     {
       "name": "Havaianas LATAM",
+      "id": "5",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "year_published": 2022,
+      "last_updated": 2022,
+      "still_participating": false,
       "isActive": false,
       "highlights": [
         "Shopify 2.0 Theme",
@@ -345,7 +365,11 @@
     },
     {
       "name": "Union Neil Homepage",
+      "id": "6",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
+      "year_published": 2022,
+      "last_updated": 2024,
+      "still_participating": true,
       "isActive": true,
       "highlights": [
         "Shopify 2.0 Theme",
@@ -358,21 +382,12 @@
     },
     {
       "name": "Queijos Ipanema",
+      "id": "7",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
-      "isActive": true,
-      "highlights": [
-        "Shopify 2.0 Theme",
-        "Responsive design using Astro, Typescript, and Ninja Keys",
-        "Integrated with GitHub API to display projects",
-        "Employed the JSON Resume format for easy updates"
-      ],
-      "github": "https://github.com/jsonresume",
-      "url": "https://jsonresume.org"
-    },
-    {
-      "name": "Sítio São Rafael",
-      "description": "North American eComm for legendary flip-flop brand, Havaianas",
-      "isActive": true,
+      "year_published": 2022,
+      "last_updated": 2022,
+      "still_participating": false,
+      "isActive": false,
       "highlights": [
         "Shopify 2.0 Theme",
         "Responsive design using Astro, Typescript, and Ninja Keys",

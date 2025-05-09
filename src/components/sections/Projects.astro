@@ -1,9 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
 import Section from "../Section.astro";
-import { projects as projectsData } from "@cv";
-import type { Projects } from "@/data/cv";
-const projects = projectsData as Projects[];
+import { getCollection } from "astro:content";
+
+const projectsResponse = await getCollection("projects");
+
+if (!projectsResponse) return new Response("No projects found");
+
+const projects = projectsResponse.map((proj) => proj.data);
 ---
 
 <Section title="Projects" subtitle="(in progress...)">
@@ -11,12 +15,15 @@ const projects = projectsData as Projects[];
     {
       projects.map(
         ({
-          url,
-          description,
-          highlights = [],
+          id,
           name,
-          isActive = false,
-          github = "",
+          description,
+          year_published,
+          last_updated,
+          still_participating,
+          isActive,
+          highlights,
+          github,
         }) => {
           return (
             <li>
@@ -24,8 +31,7 @@ const projects = projectsData as Projects[];
                 <header>
                   <h3>
                     <a
-                      href={url}
-                      target="_blank"
+                      href={`/projects/${id}`}
                       title={`View the project ${name}`}
                     >
                       {name}

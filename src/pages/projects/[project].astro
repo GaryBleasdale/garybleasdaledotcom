@@ -3,20 +3,36 @@ import { getCollection, getEntry } from "astro:content";
 
 export const getStaticPaths = async () => {
   const allProjects = await getCollection("projects");
-
   let paths = allProjects.map((p) => ({
     params: { project: p.id },
   }));
-
   return paths;
 };
 
 const { project } = Astro.params;
 const projectToRender = await getEntry("projects", project);
-const { title, description, videoUrl, externalUrl } = projectToRender.data;
+
+if (!projectToRender?.data) return new Response("404 page not found");
+
+const {
+  name,
+  description,
+  year_published,
+  last_updated,
+  still_participating,
+  isActive,
+  highlights,
+  github,
+  url,
+} = projectToRender.data;
 ---
 
-<div>Title: {title}</div>
-<div>Description: {description}</div>
-<div>Video: {videoUrl}</div>
-<div>Project Url: {externalUrl}</div>
+<div>{name}</div>
+<div>{description}</div>
+<div>{year_published}</div>
+<div>{last_updated}</div>
+<div>{still_participating}</div>
+<div>{isActive ? "active" : "inactive"}</div>
+<div>{highlights.map((highlight: string) => <div>{highlight}</div>)}</div>
+<div>{github}</div>
+<div>{url}</div>
