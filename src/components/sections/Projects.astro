@@ -36,16 +36,10 @@ const projects = projectsResponse.map((proj) => proj.data);
                     >
                       {name}
                     </a>
-                    {isActive && <span>•</span>}
-                    {github && (
-                      <a
-                        class="github-code-link"
-                        href={github}
-                        target="_blank"
-                        title={`View the source code of the project ${name}`}
-                      >
-                        <Icon name="simple-icons:github" class="icon" />
-                      </a>
+                    {isActive ? (
+                      <span class="live">•Live</span>
+                    ) : (
+                      <span class="archived">◦Archived</span>
                     )}
                   </h3>
                   <p>{description}</p>
@@ -104,11 +98,23 @@ const projects = projectsResponse.map((proj) => proj.data);
   }
 
   article h3 span {
+    border-radius: 6px;
+    background: rgb(199 255 213);
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
     color: rgb(0, 188, 47);
-    animation-name: flicker;
+    word-break: break-word;
+    /* animation-name: pulse;
     animation-duration: 3s;
     animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
+  }
+  article h3 span.archived {
+    background: #e99292;
+    color: white;
+    /* animation: none; */
+    opacity: 0.7;
   }
 
   footer {
@@ -131,7 +137,7 @@ const projects = projectsResponse.map((proj) => proj.data);
     margin-left: 5px;
   }
 
-  @keyframes flicker {
+  @keyframes pulse {
     0% {
       opacity: 1;
     }

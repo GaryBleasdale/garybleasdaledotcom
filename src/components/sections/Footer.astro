@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<aside class="made-with-astro">
+  <span>Built with <span class="heart">❤️</span> using </span>
+  <a href="https://astro.build/" target="_blank"
+    ><Icon name="astro" class="astro-icon" /></a
+  >
+</aside>
+
+<style>
+  aside {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+  }
+  .heart {
+    font-size: 10px;
+  }
+  a {
+    height: 30px;
+  }
+  .astro-icon {
+    width: 90px;
+    height: 30px;
+  }
+</style>
