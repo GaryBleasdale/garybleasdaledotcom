@@ -1,13 +1,27 @@
 ---
-import Section from "../Section.astro"
-import { basics as basicsData } from "@cv"
-import type { Basics } from "@/data/cv"
-const basics = basicsData as Basics
-const { summary } = basics
+import Section from "../Section.astro";
+import { basics as basicsData } from "@cv";
+import type { Basics } from "@/data/cv";
+const basics = basicsData as Basics;
+const { summary } = basics;
+let paragraphs;
+paragraphs = summary!.split("\n");
 ---
 
 <Section title="About me">
-  <p>
-    {summary}
-  </p>
+  <article>
+    {
+      paragraphs!.map((p) => {
+        return <p>{p}</p>;
+      })
+    }
+  </article>
 </Section>
+
+<style>
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+</style>

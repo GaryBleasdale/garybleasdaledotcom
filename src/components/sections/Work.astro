@@ -16,8 +16,11 @@ const work = workData as Work[];
           position,
           summary,
           highlights,
+          display,
           url = "",
         }) => {
+          if (!display) return;
+
           const startYear = new Date(startDate).getFullYear();
           const endYear =
             endDate != null ? new Date(endDate).getFullYear() : "Present";

@@ -46,6 +46,7 @@ interface Work {
   position: string;
   url?: string;
   startDate: DateStr;
+  display: boolean;
   endDate?: DateStr;
   summary: string;
   highlights: Highlights;
@@ -104,6 +105,7 @@ interface Skills {
 interface Languages {
   language: Language;
   fluency?: string;
+  isoCode: string;
 }
 
 type Languages =

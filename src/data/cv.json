@@ -6,7 +6,7 @@
     "phone": "5515981012944 ",
     "url": "https://garybleasdale.com",
     "image": "/profile.jpg",
-    "summary": "Dedicated to creating happy clients through timely, organized and proactive web development and team management.",
+    "summary": "The most recurrent characterization I've received is that I am a man who 'gets things done'.  I've worked across many different domains and projects, rapidly achieving successful results - this is possible because I care about what I do (I like German word 'Sorge' to describe this feeling), and am laser-focussed on improving my skills and on learning as much as possible. \n I've been working as a Shopify developer for the past 3+ years, after spending 5 years in managerial roles in Programmatic advertising . During these three years, I've been lucky enough to work on, and lead, complex, high-impact projects, and learn from amazing colleagues in the eComm space.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -37,37 +37,44 @@
       "name": "ioasys",
       "position": "Shopify Tech Lead for Havaianas North America",
       "startDate": "2025-01-01",
+      "display": true,
       "endDate": "Present",
-      "summary": "Responsible for all development work for Havaianas USA, including managing Dev Team, Theme UI, Backend Integrations, Backend Extensions, Performance, SEO, CI/CD.  Also, offering technical support for other Shopify stores served by the company.",
+      "summary": "Responsible for all development work for Havaianas USA, including managing release cycle, new features for both Theme and Apps, Backend Integrations, Backend Extensions, Performance, SEO, Analytics, bug-fixes, CI/CD.  Also, offering technical support for other Shopify stores served by the company.",
       "highlights": [
-        "Appointed Tech Lead based on a recommendation from Havaianas' International Technical Director Ecommerce.",
-        "Accountable for the technical direction of the Havaianas North America Shopify platform.",
-        "Recognized by the Head of DTC for Havaianas US for significant improvements in development team responsiveness, speed, and overall deliverable quality.",
-        "Serve as the primary technical architect for the business team, refining requirements, designing custom solutions, and translating them into actionable development tasks.",
-        "Hands-on developer contributing to both front-end development and back-end integrations, ensuring Shopify themes and third-party integrations function with minimal downtime or errors."
+        "Appointed Tech Lead based on successful performance in two previous major projects.",
+        "Daily interface with the US business team, receiving requests, refining requirements, consulting, troubleshooting and providing timely updates on status and release timelines.",
+        "Architect solutions, with an eye on scalability, maintainability, extensibility and user-friendliness (both DX and UX) across both Themes and Custom Apps.",
+        "Project Management, by turning the result of the previous two processes into well-defined cards, and then supervising the progression of the cards to ensure adherence to deadlines and quality standards before release.",
+        "Hiring, managing and mentoring over four other team-members.",
+        "Still spend around 70% of my time actively contributing to Havaianas' various codebases, which include Shopify themes and custom apps, as well as configuring the store itself.",
+        "Recognized by the Head of DTC for Havaianas North America for significant improvements in development team responsiveness, speed, and release quality."
       ]
     },
     {
       "name": "ioasys",
       "position": "Head Shopify Developer for Havaianas North America",
       "startDate": "2024-01-01",
+      "display": true,
       "endDate": "2024-12-31",
-      "summary": "Main developer responsible for migrating Havaianas USA from Salesforce to Shopify.  Built a brand new theme for the brand, designed by renowned agency 1R, built the integrations with the ERP, DAM, PIM, Returns platform, and mentored the team of 3 who worked on this project, who were unfamiliar with Shopify.",
+      "summary": "Main developer responsible for migrating Havaianas USA from Salesforce to Shopify.  Built a brand new theme for the brand, designed by renowned agency 1R, built the integrations with the mission-critical platforms like the ERP, PIM, Returns, as well as integrations with analytics and content platforms , and mentored the team of 4 who worked on this project, who were unfamiliar with Shopify.",
       "highlights": [
-        "Served as Head Developer for the migration of Havaianas North America from Salesforce to Shopify, a key corporate project recognized by the CEO and other C-level executives of Alpargatas S.A. (Havaianas' holding company).",
-        "Played a critical role in knowledge transfer and project success by mentoring a team of three developers with prior Salesforce experience, accelerating their onboarding to the new Shopify store.",
-        "Led the development of a brand-new, mobile-first Shopify theme from scratch, collaborating with a leading LA design agency to align with brand aesthetics and user experience principles.",
-        "Designed and developed a custom application using Remix and Node.js to integrate Shopify-generated orders with ERP (SAP), inventory management (SAP), returns platforms (Narvar), and product updates (Akeneo).",
-        "Demonstrated initiative and autonomy in problem-solving, independently devising solutions to assigned tasks without direct instructions."
+        "Head Developer for the migration of Havaianas North America's eComm, from Salesforce Cloud Commerce to Shopify",
+        "This was a key corporate project, whose progress was tracked by C-level executives of Alpargatas S.A. (Havaianas’ holding company, + U$S 200 million in yearly revenue).  Upon completion, the project was directly recognized and praised by the global CEO, and by VP of North America",
+        "Played a critical role in knowledge transfer and project success by mentoring a team of three developers with no previous Shopify experience, accelerating their onboarding to the new Shopify store.",
+        "Led the development of a brand-new, mobile-first Shopify theme from scratch, collaborating with a leading LA design agency 1R to align with VBI and UX principles.",
+        "Architected and developed a configurable, embedded custom app which integrates and syncs mission-critical external systems with Shopify: Orders, inventory and prices (with SAP S/4HANA ERP), product imports and updates (with Akeneo PIM) and Returns (with Narvar).",
+        "Collaborated with senior management and stakeholders to determine viability of the whole project, define needed resources, define timelines, and outline the steps in a Gantt Chart for a successful migration"
       ]
     },
     {
       "name": "ioasys",
       "position": "Shopify Developer for Havaianas LATAM & APAC",
       "startDate": "2022-10-01",
+      "display": true,
       "endDate": "2023-12-31",
       "summary": "In-housed all Shopify store management and development, which up until that point had been done by an agency.  The successful in-housing of Shopify expertise within the company was a key factor in allowing the subsequent migration of Havaianas' two biggest stores, Brazil and USA, to Shopify.",
       "highlights": [
+        "In-housed all 10 Shopify stores which were being handled by an agency, initiating the creation of a hub of Shopify knowledge and expertise within Havaianas, which was critical for the later migration of Havaianas North America and Brazil to Shopify 12 months later",
         "Transitioned into a direct role within Havaianas upon request from Havaianas LATAM's Digital Manager, assuming responsibility for the internal management and development of their Shopify platform, marking a significant career advancement based on performance at Buda Digital.",
         "Selected by Senior Management to deliver a presentation on Shopify for a technical, non-Shopify-specialist audience, showcasing expertise and communication skills.",
         "Served as the \"go-to\" technical expert for over 10 independent distributors in the LATAM region and integrated with the internal Havaianas interface for the APAC region, managing diverse workloads and ensuring a consistent brand experience.",
@@ -77,6 +84,7 @@
     {
       "name": "Buda Digital | Shopify Plus Partner",
       "position": "Shopify Developer",
+      "display": true,
       "startDate": "2022-03-01",
       "endDate": "2022-09-30",
       "summary": "Offered client-facing theme development support, such as bug-fixing and feature-building, for various of Buda's clients, including Havaianas, Mahta and Queijos Ipanema.",
@@ -90,6 +98,7 @@
       "name": "São Rafael Farm",
       "position": "Agri-Entrepreneur",
       "startDate": "2020-12-01",
+      "display": true,
       "endDate": "2022-01-31",
       "summary": "Managed two harvests of Japanases Squash on a 10Ha farm, from hiring farm hands, pest control, all the way to selling the end product in the world's third-largest wholesale food market, the CEAGESP in São Paulo.",
       "highlights": []
@@ -97,6 +106,7 @@
     {
       "name": "Infinia Mobile",
       "position": "Country Manager Brazil & Argentina",
+      "display": true,
       "startDate": "2019-06-01",
       "endDate": "2020-05-31",
       "summary": "Opened Infinia's Operations in Brazil after a successful launch in Argentina, and worked with clients such as Hyundai and Vivo.",
@@ -105,6 +115,7 @@
     {
       "name": "Infinia Mobile",
       "position": "Country Manager Argentina",
+      "display": true,
       "startDate": "2018-03-01",
       "endDate": "2019-05-31",
       "summary": "Opened Infinia's Operations in Argentina, and worked with clients such as Burger King and Claro.",
@@ -114,6 +125,7 @@
       "name": "Headway Digital",
       "position": "Director of Programmatic Ad Ops LATAM",
       "startDate": "2017-05-01",
+      "display": true,
       "endDate": "2018-02-28",
       "summary": "Managed a team of 15 programmatic traders, responsible for over U$S10,000,000's worth of ad buys across LATAM.",
       "highlights": []
@@ -123,6 +135,7 @@
       "position": "Director - Argentina",
       "startDate": "2016-03-01",
       "endDate": "2017-05-31",
+      "display": true,
       "summary": "Built Dentsu's prestigous Amnet Programmatic Trading Desk in Argentina from the ground up, mentoring hirees who later went on to great success in the industry.  Microsoft, General Motors and Honda were some of our clients.",
       "highlights": []
     },
@@ -130,6 +143,7 @@
       "name": "Accuen",
       "position": "Trading Manager",
       "startDate": "2015-06-01",
+      "display": true,
       "endDate": "2015-12-31",
       "summary": "Promoted to Trading Manager, and made responsible for managing the Virgin account, worth over U$S 20,000,000 per annum, as well as managing and mentoring a team of two traders",
       "highlights": []
@@ -137,6 +151,7 @@
     {
       "name": "Accuen",
       "position": "Trader",
+      "display": false,
       "startDate": "2014-10-01",
       "endDate": "2015-05-31",
       "summary": "My first foray into Programmatic Advertising.  Worked for Mitsubishi, among others.",
@@ -145,6 +160,7 @@
     {
       "name": "Spiceworks",
       "position": "Account Manager",
+      "display": false,
       "startDate": "2014-02-01",
       "endDate": "2014-09-30",
       "summary": "Responsible for handling Advertising accounts for Spiceworks UK",
@@ -153,6 +169,7 @@
     {
       "name": "eBay",
       "position": "Ad Operations Executive",
+      "display": false,
       "startDate": "2013-02-01",
       "endDate": "2014-01-31",
       "summary": "Learned the ropes of digital advertising in eBay's fast-paced offices in London.",
@@ -274,12 +291,23 @@
   "languages": [
     {
       "language": "English",
-      "fluency": "Native"
+      "fluency": "native",
+      "isoCode": "gb"
+    },
+    {
+      "language": "Portuguese",
+      "fluency": "fluent",
+      "isoCode": "br"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "fluent",
+      "isoCode": "es"
     }
   ],
   "projects": [
     {
-      "name": "Havaianas Theme 2.0: North America",
+      "name": "Havaianas Theme v2: North America",
       "id": "1",
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
       "year_published": 2024,
@@ -303,7 +331,7 @@
       "still_participating": true,
       "isActive": true,
       "highlights": [
-        "Type: Shopify 2.0 Theme",
+        "Type: Custom Shopify App [Embedded]",
         "My contribution: Architected & developed entirely",
         "Revenue enabled: > $10,000,000 p.a."
       ],
@@ -319,7 +347,7 @@
       "still_participating": true,
       "isActive": true,
       "highlights": [
-        "Type: Shopify 2.0 Theme",
+        "Type: Custom Shopify App [Extension-only]",
         "My contribution: Architected & developed entirely",
         "Revenue enabled: > $10,000,000 p.a."
       ],
@@ -327,7 +355,7 @@
       "url": "https://jsonresume.org"
     },
     {
-      "name": "Havaianas Theme 1.0: LATAM & APAC",
+      "name": "Havaianas Theme v1: LATAM & APAC",
       "id": "4",
       "year_published": 2023,
       "last_updated": 2024,
@@ -367,7 +395,7 @@
       "still_participating": true,
       "isActive": true,
       "highlights": [
-        "Type: Shopify 2.0 Theme",
+        "Type: Corporate Homepage",
         "My contribution: Developed entirely",
         "Revenue enabled: > R$ 1,200,000 p.a."
       ],
@@ -383,7 +411,7 @@
       "still_participating": true,
       "isActive": false,
       "highlights": [
-        "Type: Shopify 2.0 Theme",
+        "Type: Corporate Homepage",
         "My contribution: Developed entirely",
         "Revenue enabled: > R$ 1,200,000 p.a."
       ],

@@ -11,6 +11,9 @@ const projects = projectsResponse.map((proj) => proj.data);
 ---
 
 <Section title="Projects" subtitle="(in progress...)">
+  <p>
+    A list of the most impactful production-grade projects I have worked on.
+  </p>
   <ul>
     {
       projects.map(
@@ -37,9 +40,18 @@ const projects = projectsResponse.map((proj) => proj.data);
                       {name}
                     </a>
                     {isActive ? (
-                      <span class="live">•Live</span>
+                      <span class="live">•&#10240Live</span>
                     ) : (
-                      <span class="archived">◦Archived</span>
+                      <span class="archived">◦&#10240Archived</span>
+                    )}
+                    {still_participating ? (
+                      <span class="maintained">
+                        •&#10240Actively&#10240Maintained
+                      </span>
+                    ) : (
+                      <span class="unmaintained archived">
+                        ◦&#10240Unmaintained
+                      </span>
                     )}
                   </h3>
                   <p>{description}</p>
@@ -59,8 +71,10 @@ const projects = projectsResponse.map((proj) => proj.data);
 </Section>
 
 <style>
+  p {
+    margin-bottom: 10px;
+  }
   ul {
-    display: grid;
     gap: 1rem;
     margin-inline: -16px;
   }
@@ -119,7 +133,7 @@ const projects = projectsResponse.map((proj) => proj.data);
 
   footer {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 4px;
     font-size: 0.6rem;
   }
@@ -127,6 +141,7 @@ const projects = projectsResponse.map((proj) => proj.data);
   footer span {
     border-radius: 6px;
     background: #eee;
+    max-width: max-content;
     color: #444;
     font-size: 0.6rem;
     font-weight: 500;

@@ -1,0 +1,44 @@
+---
+import Section from "../Section.astro";
+
+import { languages as languageData } from "@cv";
+import type { Languages } from "@/data/cv";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+const languages = languageData as Languages[];
+---
+
+<Section title="Languages">
+  <article>
+    <p>
+      <span>I am a</span>
+      {
+        languages.map(({ language, fluency, isoCode }, i) => {
+          if (fluency === "native")
+            return (
+              <span>
+                {" "}
+                {fluency} <span class={`fi fi-${isoCode}`} />
+                {language} speaker{languages.length > 2 ? ", and speak" : "."}
+              </span>
+            );
+
+          if (i === languages.length - 1)
+            return (
+              <span>
+                as well as
+                {fluency} <span class={`fi fi-${isoCode}`} />
+                {language}.
+              </span>
+            );
+
+          return (
+            <span>
+              {fluency} <span class={`fi fi-${isoCode}`} />
+              {language},
+            </span>
+          );
+        })
+      }
+    </p>
+  </article>
+</Section>

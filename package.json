@@ -28,6 +28,7 @@
     "astro-icon": "^1.1.5",
     "cal-heatmap": "^4.2.4",
     "dayjs": "^1.11.13",
+    "flag-icons": "^7.3.2",
     "hotkeypad": "^1.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
