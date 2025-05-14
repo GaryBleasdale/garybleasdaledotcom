@@ -55,12 +55,6 @@ const { image, summary, url = "" } = basicsData as Basics;
     letter-spacing: -0.025rem;
   }
 
-  body,
-  figure {
-    margin: 0;
-    padding: 0;
-  }
-
   a {
     text-decoration: none;
   }
@@ -94,6 +88,12 @@ const { image, summary, url = "" } = basicsData as Basics;
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
+  }
+
+  h3,
+  h3 > a {
+    font-size: 16px;
+    color: #111;
   }
 
   p {

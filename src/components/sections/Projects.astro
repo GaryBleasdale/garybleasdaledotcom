@@ -23,8 +23,10 @@ const projects = projectsResponse.map((proj) => proj.data);
           description,
           year_published,
           last_updated,
+          has_full_description,
           still_participating,
           isActive,
+          url,
           highlights,
           github,
         }) => {
@@ -34,7 +36,7 @@ const projects = projectsResponse.map((proj) => proj.data);
                 <header>
                   <h3>
                     <a
-                      href={`/projects/${id}`}
+                      href={has_full_description ? `/projects/${id}` : `${url}`}
                       title={`View the project ${name}`}
                     >
                       {name}
@@ -44,13 +46,9 @@ const projects = projectsResponse.map((proj) => proj.data);
                     ) : (
                       <span class="archived">◦&#10240Archived</span>
                     )}
-                    {still_participating ? (
+                    {still_participating && (
                       <span class="maintained">
                         •&#10240Actively&#10240Maintained
-                      </span>
-                    ) : (
-                      <span class="unmaintained archived">
-                        ◦&#10240Unmaintained
                       </span>
                     )}
                   </h3>
@@ -75,6 +73,8 @@ const projects = projectsResponse.map((proj) => proj.data);
     margin-bottom: 10px;
   }
   ul {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
     margin-inline: -16px;
   }

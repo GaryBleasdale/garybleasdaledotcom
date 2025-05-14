@@ -249,6 +249,11 @@ const printInfo = [email, phone, linkedinUrl].filter(Boolean).join(" • ");
     margin-top: 5px;
     gap: 10px;
   }
+  @media (max-width: 540px) {
+    .email-details {
+      left: -85px;
+    }
+  }
   .email-copy-success {
     opacity: 0;
     background: palegreen;

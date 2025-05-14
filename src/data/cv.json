@@ -320,6 +320,7 @@
         "Revenue enabled: > $10,000,000 p.a."
       ],
       "github": "https://github.com/jsonresume",
+      "has_full_description": false,
       "url": "https://jsonresume.org"
     },
     {
@@ -330,6 +331,7 @@
       "last_updated": 2025,
       "still_participating": true,
       "isActive": true,
+      "has_full_description": false,
       "highlights": [
         "Type: Custom Shopify App [Embedded]",
         "My contribution: Architected & developed entirely",
@@ -346,6 +348,7 @@
       "last_updated": 2025,
       "still_participating": true,
       "isActive": true,
+      "has_full_description": false,
       "highlights": [
         "Type: Custom Shopify App [Extension-only]",
         "My contribution: Architected & developed entirely",
@@ -362,6 +365,7 @@
       "still_participating": false,
       "description": "North American eComm for legendary flip-flop brand, Havaianas",
       "isActive": true,
+      "has_full_description": false,
       "highlights": [
         "Type: Shopify 2.0 Theme",
         "My contribution: Developed together with another partner",
@@ -378,6 +382,7 @@
       "last_updated": 2022,
       "still_participating": false,
       "isActive": false,
+      "has_full_description": false,
       "highlights": [
         "Type: Shopify 2.0 Theme",
         "My contribution: Bug fixes and feature building.",
@@ -394,6 +399,7 @@
       "last_updated": 2024,
       "still_participating": true,
       "isActive": true,
+      "has_full_description": false,
       "highlights": [
         "Type: Corporate Homepage",
         "My contribution: Developed entirely",
@@ -410,6 +416,7 @@
       "last_updated": 2024,
       "still_participating": true,
       "isActive": false,
+      "has_full_description": false,
       "highlights": [
         "Type: Corporate Homepage",
         "My contribution: Developed entirely",
@@ -426,6 +433,7 @@
       "last_updated": 2022,
       "still_participating": false,
       "isActive": false,
+      "has_full_description": false,
       "highlights": [
         "Type: Shopify 2.0 Theme",
         "My contribution: Built homepage & content section (blogs, posts, various marketing content pages)",
