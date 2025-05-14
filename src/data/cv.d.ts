@@ -138,15 +138,18 @@ type Languages =
     reference?: string;
   }
 
-interface Projects {
+interface Project {
   name: string;
-  startDate?: DateStr;
-  endDate?: DateStr;
-  description?: string;
-  highlights?: Highlights;
-  url?: string;
-  github?: string;
-  isActive?: boolean;
+  id: string;
+  description: string;
+  year_published: number;
+  last_updated: number;
+  still_participating: boolean;
+  isActive: boolean;
+  highlights: string[];
+  github: string;
+  has_full_description: boolean;
+  url: string;
 }
 
 type DateStr = `${string}-${string}-${string}`;
